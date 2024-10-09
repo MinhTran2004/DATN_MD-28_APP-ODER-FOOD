@@ -6,6 +6,13 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     // header
+    container_header: {
+        width: '100%',
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: 10,
+        paddingHorizontal: 5
+    },
     text_title: {
         fontSize: 25,
         color: 'black',

@@ -15,10 +15,10 @@ export default function ScreenRegister({navigation}:any) {
             <Text style={styles.text_title}>Create New Account</Text>
 
             <View style={{width: '100%', marginTop: 20}}>
-                <ComponentLogin.InputFieldLogin placeholder={"Nhập tên người dùng"} icon={require("../Image/account.png")} input={username} event={setUsername} />
-                <ComponentLogin.InputFieldLogin placeholder={"Nhập tài khoản"} icon={require("../Image/mail.png")} input={account} event={setAccount} />
-                <ComponentLogin.InputFieldLogin placeholder={"Nhập mật khẩu"} icon={require("../Image/password.png")} input={password} event={setPassword} />
-                <ComponentLogin.InputFieldLogin placeholder={"Nhập số điẹn thoại"} icon={require("../Image/phone.png")} input={phone} event={setPhone} />
+                <ComponentLogin.InputTextLogin placeholder={"Nhập tên người dùng"} icon={require("../Image/account.png")} input={username} event={setUsername} />
+                <ComponentLogin.InputTextLogin placeholder={"Nhập tài khoản"} icon={require("../Image/mail.png")} input={account} event={setAccount} />
+                <ComponentLogin.InputTextLogin placeholder={"Nhập mật khẩu"} icon={require("../Image/password.png")} input={password} event={setPassword} />
+                <ComponentLogin.InputTextLogin placeholder={"Nhập số điẹn thoại"} icon={require("../Image/phone.png")} input={phone} event={setPhone} />
             </View>
             
             <TouchableOpacity style={styles.layout_btn_login} onPress={() => navigation.navigate('Login')}>

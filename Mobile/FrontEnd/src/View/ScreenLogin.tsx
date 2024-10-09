@@ -15,8 +15,8 @@ export default function ScreenLogin({ navigation }: any) {
             <Text style={styles.text_title}>Login To Your Account</Text>
 
             <View style={{ marginTop: 50, width: '100%' }}>
-                <ComponentLogin.InputFieldLogin placeholder={"Nhập tài khoản"} icon={require("../Image/account.png")} input={account} event={setAccount} />
-                <ComponentLogin.InputFieldLogin placeholder={"Nhập mật khẩu"} icon={require("../Image/password.png")} input={password} event={setPassword} />
+                <ComponentLogin.InputTextLogin placeholder={"Nhập tài khoản"} icon={require("../Image/account.png")} input={account} event={setAccount} />
+                <ComponentLogin.InputTextLogin placeholder={"Nhập mật khẩu"} icon={require("../Image/password.png")} input={password} event={setPassword} />
             </View>
 
             <View style={styles.container_status_account}>

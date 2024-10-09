@@ -9,7 +9,7 @@ export default function ScreenCart({ navigation }: any) {
 
             <ScrollView style={{padding: 10}}>
                 {/* header */}
-                <View style={{ width: '100%', flexDirection: 'row', alignItems: 'center'}}>
+                <View style={styles.container_header}>
                     <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                         <Feather name="arrow-left" style={{fontSize: 30}} />
                     </TouchableOpacity>
@@ -32,7 +32,7 @@ export default function ScreenCart({ navigation }: any) {
                     <Text style={styles.text_total}>$ 20.000</Text>
                 </View>
 
-                <TouchableOpacity style={styles.btn_payment}>
+                <TouchableOpacity style={styles.btn_payment} onPress={()=> navigation.navigate('Payment')}>
                     <Text style={styles.text_payment}>Thanh toán</Text>
                 </TouchableOpacity>
             </View>

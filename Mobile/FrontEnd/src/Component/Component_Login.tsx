@@ -3,7 +3,7 @@ import { Image, StyleSheet, TextInput, TouchableOpacity, View } from "react-nati
 
 export default class ComponentLogin {
 
-    static InputFieldLogin = ({ placeholder, icon, input, event }: any) => {
+    static InputTextLogin = ({ placeholder, icon, input, event }: any) => {
         const [isHovered, setIsHovered] = useState(false);
         return (
             <TouchableOpacity

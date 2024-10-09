@@ -3,7 +3,7 @@ import styles from "../CSS/CSSHome";
 import ComponentHome from "../Component/Component_Home";
 import { useState } from "react";
 
-export default function ScreenHome({navigation}:any) {
+export default function ScreenHome({ navigation }: any) {
     const [search, setSearch] = useState("");
 
     return (
@@ -33,34 +33,34 @@ export default function ScreenHome({navigation}:any) {
                 <Image source={require("../Image/logo_demo.jpg")} style={styles.img_body} />
 
                 <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <ComponentHome.SelectCategoryProductVertical icon={require("../Image/icon_hambuger.png")} text={"Hambuger"} />
-                    <ComponentHome.SelectCategoryProductVertical icon={require("../Image/icon_pizza.png")} text={"Pizza"} />
-                    <ComponentHome.SelectCategoryProductVertical icon={require("../Image/icon_noodles.png")} text={"Noodles"} />
-                    <ComponentHome.SelectCategoryProductVertical icon={require("../Image/icon_chicken.png")} text={"Chicken"} />
+                    <ComponentHome.SelectCategoryProductVertical navigation={navigation} icon={require("../Image/icon_hambuger.png")} text={"Hambuger"} />
+                    <ComponentHome.SelectCategoryProductVertical navigation={navigation} icon={require("../Image/icon_pizza.png")} text={"Pizza"} />
+                    <ComponentHome.SelectCategoryProductVertical navigation={navigation} icon={require("../Image/icon_noodles.png")} text={"Noodles"} />
+                    <ComponentHome.SelectCategoryProductVertical navigation={navigation} icon={require("../Image/icon_chicken.png")} text={"Chicken"} />
                 </View>
                 <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }}>
-                    <ComponentHome.SelectCategoryProductVertical icon={require("../Image/icon_potato.png")} text={"Potato"} />
-                    <ComponentHome.SelectCategoryProductVertical icon={require("../Image/icon_drink.png")} text={"Drink"} />
-                    <ComponentHome.SelectCategoryProductVertical icon={require("../Image/icon_cake.png")} text={"Dessest"} />
-                    <ComponentHome.SelectCategoryProductVertical icon={require("../Image/icon_more.png")} text={"More"} />
+                    <ComponentHome.SelectCategoryProductVertical navigation={navigation} icon={require("../Image/icon_potato.png")} text={"Potato"} />
+                    <ComponentHome.SelectCategoryProductVertical navigation={navigation} icon={require("../Image/icon_drink.png")} text={"Drink"} />
+                    <ComponentHome.SelectCategoryProductVertical navigation={navigation} icon={require("../Image/icon_cake.png")} text={"Dessest"} />
+                    <ComponentHome.SelectCategoryProductVertical navigation={navigation} icon={require("../Image/icon_more.png")} text={"More"} />
                 </View>
 
                 <ComponentHome.Text_Title text={"Discount Guaranteed!"} />
 
-                <ScrollView horizontal={true}>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                     <View style={{ flexDirection: 'row' }}>
-                        <ComponentHome.ProductHozirontal />
-                        <ComponentHome.ProductHozirontal />
-                        <ComponentHome.ProductHozirontal />
-                        <ComponentHome.ProductHozirontal />
-                        <ComponentHome.ProductHozirontal />
-                        <ComponentHome.ProductHozirontal />
+                        <ComponentHome.ProductHozirontal navigation={navigation} />
+                        <ComponentHome.ProductHozirontal navigation={navigation} />
+                        <ComponentHome.ProductHozirontal navigation={navigation} />
+                        <ComponentHome.ProductHozirontal navigation={navigation} />
+                        <ComponentHome.ProductHozirontal navigation={navigation} />
+                        <ComponentHome.ProductHozirontal navigation={navigation} />
                     </View>
                 </ScrollView>
 
                 <ComponentHome.Text_Title text={"Recommended For You"} />
 
-                <View style={{ flexDirection: 'row', marginBottom: 15 }}>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ flexDirection: 'row', marginBottom: 15 }}>
                     <ComponentHome.SelectCategoryProuctHozizontal icon={require("../Image/icon_all.png")} text={"All"} />
                     <ComponentHome.SelectCategoryProuctHozizontal icon={require("../Image/icon_hambuger.png")} text={"Hambuger"} />
                     <ComponentHome.SelectCategoryProuctHozizontal icon={require("../Image/icon_pizza.png")} text={"Pizza"} />
@@ -70,15 +70,16 @@ export default function ScreenHome({navigation}:any) {
                     <ComponentHome.SelectCategoryProuctHozizontal icon={require("../Image/icon_drink.png")} text={"Drink"} />
                     <ComponentHome.SelectCategoryProuctHozizontal icon={require("../Image/icon_cake.png")} text={"Dessest"} />
                     <ComponentHome.SelectCategoryProuctHozizontal icon={require("../Image/icon_more.png")} text={"More"} />
-                </View>
+                </ScrollView>
 
-                <ComponentHome.ProductVertical />
-                <ComponentHome.ProductVertical />
-                <ComponentHome.ProductVertical />
-                <ComponentHome.ProductVertical />
-                <ComponentHome.ProductVertical />
-                <ComponentHome.ProductVertical />
-                <ComponentHome.ProductVertical />
+
+                <ComponentHome.ProductVertical navigation={navigation} />
+                <ComponentHome.ProductVertical navigation={navigation} />
+                <ComponentHome.ProductVertical navigation={navigation} />
+                <ComponentHome.ProductVertical navigation={navigation} />
+                <ComponentHome.ProductVertical navigation={navigation} />
+                <ComponentHome.ProductVertical navigation={navigation} />
+                <ComponentHome.ProductVertical navigation={navigation} />
 
             </View>
         </ScrollView>

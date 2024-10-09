@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
-export default class Component_Home {
+export default class ComponentHome {
     static Input_Screach = ({ input, event }: any) => {
         return (
             <View style={styles.container_sreach}>
@@ -13,54 +13,77 @@ export default class Component_Home {
 
     static Text_Title = ({ text }: any) => {
         return (
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 10 }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 5 }}>
                 <Text style={styles.text_title}>{text}</Text>
                 <Text style={[styles.text_title, { color: '#37c666' }]}>See All</Text>
             </View>
         )
     }
 
-    static SelectCategoryProductVertical = ({ icon, text }: any) => {
+    static SelectCategoryProductVertical = ({ navigation, icon, text }: any) => {
         return (
-            <View style={styles.container_select_vertical}>
+            <TouchableOpacity onPress={() => navigation.navigate('CategoryProduct')} style={styles.container_select_vertical}>
                 <Image source={icon} style={styles.icon_select_vertical} />
                 <Text style={styles.text_select_vertical}>{text}</Text>
-            </View>
+            </TouchableOpacity>
         )
     }
 
-    static ProductHozirontal = () => {
+    static ProductHozirontal = ({ navigation }: any) => {
+        const [favourite, setFavourite] = useState(false);
         return (
-            <View style={styles.container_product_hozizontal}>
+            <TouchableOpacity style={styles.container_product_hozizontal} onPress={() => navigation.navigate("InforProduct")}>
                 <Image source={require("../Image/image_product_demo.png")} style={styles.image_product_hozizontal} />
                 <Text numberOfLines={1} style={styles.name_product_hozizontal}>Mixed Salad BonBum</Text>
                 <Text>Hambuger</Text>
-                <Text style={styles.price_product_hozizontal}>$23.000</Text>
-            </View>
+                <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between' }}>
+                    <Text style={styles.price_product_hozizontal}>$23.000</Text>
+                    <TouchableOpacity onPress={() => setFavourite(!favourite)}>
+                        {favourite ?
+                            (<Image source={require('../Image/icon_showFavourite.png')} style={{ width: 20, height: 20 }} />)
+                            :
+                            (<Image source={require('../Image/icon_unFavourite.png')} style={{ width: 20, height: 20 }} />)
+                        }
+                    </TouchableOpacity>
+                </View>
+            </TouchableOpacity>
         )
     }
 
     static SelectCategoryProuctHozizontal = ({ icon, text }: any) => {
         return (
-            <View style={styles.container_select_hozirontal}>
-                <Image source={icon} style={{ width: 20, height: 20 }} />
-                <Text style={styles.text_select_hozirontal}>{text}</Text>
-            </View>
+            <TouchableOpacity>
+                <View style={styles.container_select_hozirontal}>
+                    <Image source={icon} style={{ width: 20, height: 20 }} />
+                    <Text style={styles.text_select_hozirontal}>{text}</Text>
+                </View>
+            </TouchableOpacity>
         )
     }
 
-    static ProductVertical = () => {
+    static ProductVertical = ({ navigation }: any) => {
+        const [favourite, setFavourite] = useState(false);
+
         return (
-            <View style={styles.container_product_vertical}>
+            <TouchableOpacity style={styles.container_product_vertical} onPress={() => navigation.navigate("InforProduct")}>
                 <Image source={require("../Image/image_product_demo.png")} style={styles.image_product_vertical} />
-                <View style={{ marginLeft: 10, justifyContent: 'space-between' }}>
+                <View style={{ width: '100%', marginLeft: 10, justifyContent: 'space-between' }}>
                     <View>
                         <Text style={styles.name_product_vertical}>Vegetarian Noodles</Text>
                         <Text>Hambuger</Text>
                     </View>
-                    <Text style={styles.price_product_vertical}>$23.000</Text>
+                    <View style={{ width: '72%', flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <Text style={styles.price_product_vertical}>$23.000</Text>
+                        <TouchableOpacity onPress={() => setFavourite(!favourite)}>
+                            {favourite ?
+                                (<Image source={require('../Image/icon_showFavourite.png')} style={{ width: 20, height: 20 }} />)
+                                :
+                                (<Image source={require('../Image/icon_unFavourite.png')} style={{ width: 20, height: 20 }} />)
+                            }
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            </View>
+            </TouchableOpacity>
         )
     }
 
@@ -106,13 +129,14 @@ const styles = StyleSheet.create({
 
     // SelectCategoryProuctHozizontal
     container_select_hozirontal: {
+        backgroundColor: 'white',
         flexDirection: 'row',
         alignItems: 'center',
         borderWidth: 2,
         borderColor: '#2fbf5f',
         borderRadius: 20,
         marginRight: 5,
-        padding: 5,
+        paddingVertical: 5,
         paddingHorizontal: 15,
     },
     text_select_hozirontal: {
@@ -155,7 +179,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         borderRadius: 10,
         marginRight: 10,
-        marginTop: 10,
+        marginBottom: 10,
         padding: 15,
     },
     image_product_vertical: {
