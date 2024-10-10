@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Image, LogBox } from "react-native";
+import { Image, LogBox, TouchableOpacity, View } from "react-native";
 import ScreenLogin from "./src/View/ScreenLogin";
 import { NavigationContainer } from "@react-navigation/native";
 import ScreenRegister from "./src/View/ScreenRegister";
@@ -47,15 +47,15 @@ export default function App() {
 }
 
 const BottomTab = createMaterialBottomTabNavigator();
-
+// activeColor="red" inactiveColor="green" labeled = {false} barStyle={{ backgroundColor: 'white' }}
 const BottomTabs = () => {
   return (
-    <BottomTab.Navigator initialRouteName="Profile">
-      <BottomTab.Screen name="Home" component={ScreenHome} options={{ tabBarIcon: () => <Image source={require("./src/Image/icon_home.png")} style={{ width: 20, height: 20 }} /> }} />
-      <BottomTab.Screen name="Notification" component={ScreenNotification} options={{ tabBarIcon: () => <Image source={require("./src/Image/icon_notification.png")} style={{ width: 20, height: 20 }} /> }} />
-      <BottomTab.Screen name="Messenger" component={ScreenMessenger} options={{ tabBarIcon: () => <Image source={require("./src/Image/icon_messenger.png")} style={{ width: 20, height: 20 }} /> }} />
-      <BottomTab.Screen name="Order" component={TopTabs} options={{ tabBarIcon: () => <Image source={require("./src/Image/icon_order.png")} style={{ width: 20, height: 20 }} /> }} />
-      <BottomTab.Screen name="Profile" component={ScreenProfile} options={{ tabBarIcon: () => <Image source={require("./src/Image/icon_profile.png")} style={{ width: 20, height: 20 }} /> }} />
+    <BottomTab.Navigator activeColor="#5b2bb2" initialRouteName="Home" shifting={true} labeled={true} activeIndicatorStyle={{ backgroundColor: 'none' }} barStyle={{ backgroundColor: 'white', height: 70 }}>
+      <BottomTab.Screen name="Home" component={ScreenHome} options={{ tabBarIcon: ({ color }: any) => <Image source={require("./src/Image/icon_home.png")} style={{ width: 20, height: 20, tintColor: color }} /> }} />
+      <BottomTab.Screen name="Notification" component={ScreenNotification} options={{ tabBarBadge: true, tabBarIcon: ({ color }: any) => (<Image source={require("./src/Image/icon_notification.png")} style={{ width: 20, height: 20, tintColor: color }} />) }} />
+      <BottomTab.Screen name="Messenger" component={ScreenMessenger} options={{ tabBarBadge: true, tabBarIcon: ({ color }: any) => (<Image source={require("./src/Image/icon_messenger.png")} style={{ width: 20, height: 20, tintColor: color }} />) }} />
+      <BottomTab.Screen name="Order" component={TopTabs} options={{ tabBarIcon: ({ color }: any) => (<Image source={require("./src/Image/icon_order.png")} style={{ width: 20, height: 20, tintColor: color }} />) }} />
+      <BottomTab.Screen name="Profile" component={ScreenProfile} options={{ tabBarIcon: ({ color }: any) => (<Image source={require("./src/Image/icon_profile.png")} style={{ width: 20, height: 20, tintColor: color }} />) }} />
     </BottomTab.Navigator>
   )
 }
