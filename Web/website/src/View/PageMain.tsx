@@ -1,41 +1,30 @@
+import Component_PageMain from "../Component/Component_PageMain";
 import styles from "../CSS/CSS_MainPage.module.css";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 export default function PageMain() {
-    const ItemNavigation = ({ name }: any) => {
-        return (
-            <div className={styles.item_navigation}>
-                <p>{name}</p>
-            </div>
-        )
-    }
-
     return (
         <div>
-            <div className={styles.container_header}>
-                <img src={require('../Image/logo_app.png')} alt="" style={{height: '100%'}}/>
-            </div>
-
-            <div className={styles.body}>
-                {/* naviagtion */}
-                <div className={styles.container_navigation}>
-                    <ItemNavigation name={"Quản lý khách hàng"} />
-                    <ItemNavigation name={"Quản lý nhà cung cấp"} />
-                    <ItemNavigation name={"Quản lý sản phẩm"} />
-                    <ItemNavigation name={"Quản lý đơn hàng"} />
-                    <ItemNavigation name={"Quản lý hóa đơn"} />
-                    <ItemNavigation name={"Quản lý hóa đơn"} />
-                    <ItemNavigation name={"Quản lý khuyến mại"} />
+            {/* navigation */}
+            <div className={styles.container_navigation}>
+                <div className={styles.container_logo}>
+                    <RxHamburgerMenu style={{ color: 'white', fontSize: 20 }} />
+                    <img src={require('../Image/logo_app.png')} className={styles.image_logo} alt="" />
+                    <p style={{ color: 'white' }}>Order Food</p>
                 </div>
 
+                <Component_PageMain.ItemNavigation title={"Quản trị hệ thống"} id={"1"} />
+                <Component_PageMain.ItemNavigation title={"Quản lý tài khoản"} id={"2"} />
+                <Component_PageMain.ItemNavigation title={"Quản lý sản phẩm"} id={"3"} />
+            </div>
 
 
 
 
 
 
-
-                {/* content */}
-                <div className={styles.container_content}></div>
+            {/* content */}
+            <div className={styles.container_content}>
             </div>
 
         </div>

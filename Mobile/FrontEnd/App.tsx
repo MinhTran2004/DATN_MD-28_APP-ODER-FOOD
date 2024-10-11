@@ -20,6 +20,7 @@ import ScreenFavourite from "./src/View/ScreenFavourite";
 import ScreenAddress from "./src/View/ScreenAddress";
 import ScreenEditAddress from "./src/View/ScreenEditAddress";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import ScreenStoreRegistrantion from "./src/View/ScreenStoreRegistrantion";
 
 LogBox.ignoreLogs(['Warning: A props object containing a "key" prop is being spread into JSX']);
 
@@ -39,6 +40,7 @@ export default function App() {
           <Stack.Screen name="Address" component={ScreenAddress} />
           <Stack.Screen name="EditAddress" component={ScreenEditAddress} />
           <Stack.Screen name="Favourite" component={ScreenFavourite} />
+          <Stack.Screen name="StoreRegistrantion" component={ScreenStoreRegistrantion} />
           <Stack.Screen name="CategoryProduct" component={ScreenCategoryProduct} />
         </Stack.Navigator>
       </NavigationContainer>
@@ -47,10 +49,10 @@ export default function App() {
 }
 
 const BottomTab = createMaterialBottomTabNavigator();
-// activeColor="red" inactiveColor="green" labeled = {false} barStyle={{ backgroundColor: 'white' }}
+
 const BottomTabs = () => {
   return (
-    <BottomTab.Navigator activeColor="#5b2bb2" initialRouteName="Home" shifting={true} labeled={true} activeIndicatorStyle={{ backgroundColor: 'none' }} barStyle={{ backgroundColor: 'white', height: 70 }}>
+    <BottomTab.Navigator activeColor="#5b2bb2" initialRouteName="Profile" shifting={true} labeled={true} activeIndicatorStyle={{ backgroundColor: 'none' }} barStyle={{ backgroundColor: 'white', height: 70 }}>
       <BottomTab.Screen name="Home" component={ScreenHome} options={{ tabBarIcon: ({ color }: any) => <Image source={require("./src/Image/icon_home.png")} style={{ width: 20, height: 20, tintColor: color }} /> }} />
       <BottomTab.Screen name="Notification" component={ScreenNotification} options={{ tabBarBadge: true, tabBarIcon: ({ color }: any) => (<Image source={require("./src/Image/icon_notification.png")} style={{ width: 20, height: 20, tintColor: color }} />) }} />
       <BottomTab.Screen name="Messenger" component={ScreenMessenger} options={{ tabBarBadge: true, tabBarIcon: ({ color }: any) => (<Image source={require("./src/Image/icon_messenger.png")} style={{ width: 20, height: 20, tintColor: color }} />) }} />

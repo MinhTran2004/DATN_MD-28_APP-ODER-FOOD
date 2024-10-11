@@ -10,7 +10,7 @@ export default class Component_Profile {
             <TouchableOpacity onPress={() => navigation.navigate(screen)}>
                 <View style={styles.container_item_profile}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', }}>
-                        <Image source={icon} style={{ width: 20, height: 20, tintColor: '#343434' }} />
+                        <Image source={icon} style={{ width: 20, height: 20}} />
                         <Text style={{ fontSize: 20, marginLeft: 10 }}>{name}</Text>
                     </View>
                     {mode ?
