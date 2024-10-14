@@ -22,6 +22,8 @@ import ScreenEditAddress from "./src/View/ScreenEditAddress";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import ScreenStoreRegistrantion from "./src/View/ScreenStoreRegistrantion";
 import ScreenMessengerDetail from "./src/View/ScreenMessengerDetail";
+import ScreenChangePassword from "./src/View/ScreenChangePassword";
+import ScreenPolicyAndPrivacy from "./src/View/ScreenPolicyAndPrivacy";
 
 
 LogBox.ignoreLogs(['Warning: A props object containing a "key" prop is being spread into JSX']);
@@ -45,6 +47,8 @@ export default function App() {
           <Stack.Screen name="StoreRegistrantion" component={ScreenStoreRegistrantion} />
           <Stack.Screen name="CategoryProduct" component={ScreenCategoryProduct} /> 
           <Stack.Screen name="MessengerDetail" component={ScreenMessengerDetail} />
+          <Stack.Screen name="ChangePassWord" component={ScreenChangePassword}/>
+          <Stack.Screen name="PolicyAndPrivacy" component={ScreenPolicyAndPrivacy}/>
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
