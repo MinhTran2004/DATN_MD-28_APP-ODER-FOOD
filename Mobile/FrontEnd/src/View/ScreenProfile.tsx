@@ -15,7 +15,7 @@ export default function ScreenProfile({navigation}:any) {
             <View style={{ padding: 10 }}>
                 <Text style={{marginTop: 10}}>Tài khoản</Text>
                 <Component_Profile.Item_Profile name={"Đăng kí cửa hàng"} icon={require("../Image/icon_home.png")} navigation={navigation} screen={'StoreRegistrantion'}/>
-                <Component_Profile.Item_Profile name={"Thông tin tài khoản"} icon={require("../Image/account.png")} navigation={navigation} screen={'Profile'}/>
+                <Component_Profile.Item_Profile name={"Thông tin tài khoản"} icon={require("../Image/account.png")} navigation={navigation} screen={'Account'}/>
                 <Component_Profile.Item_Profile name={"Địa chỉ"} icon={require("../Image/icon_location.png")} navigation={navigation} screen={'Address'}/>
                 <Component_Profile.Item_Profile name={"Đổi mật khẩu"} icon={require("../Image/password.png")} navigation={navigation} screen={'ChangePassword'}/>
                 <Component_Profile.Item_Profile name={"Sản phẩm yêu thích"} icon={require("../Image/icon_showFavourite.png")} navigation={navigation} screen={'Favourite'}/>

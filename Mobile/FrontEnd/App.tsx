@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import ScreenRegister from "./src/View/ScreenRegister";
 import ScreenHome from "./src/View/ScreenHome";
 import ScreenCart from "./src/View/ScreenCart";
+import ScreenAccount from "./src/View/ScreenAccount";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import ScreenProfile from "./src/View/ScreenProfile";
 import ScreenNotification from "./src/View/ScreenNotification";
@@ -42,6 +43,7 @@ export default function App() {
           <Stack.Screen name="Favourite" component={ScreenFavourite} />
           <Stack.Screen name="StoreRegistrantion" component={ScreenStoreRegistrantion} />
           <Stack.Screen name="CategoryProduct" component={ScreenCategoryProduct} />
+          <Stack.Screen name="Account" component={ScreenAccount} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
