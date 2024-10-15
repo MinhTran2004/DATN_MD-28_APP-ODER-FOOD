@@ -22,7 +22,7 @@ export const ItemNavigation = ({ icon, title, data, event, activeScreen }: any) 
                         <p className={activeScreen.current !== data ? styles.title_header_navigation1 : styles.title_header_navigation2}>{title}</p>
                     </div>)
                     :
-                    (<div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                    (<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
                         <div style={{ display: 'flex' }}>
                             <img src={icon} className={styles.icon_header_navigation} alt="" />
                             <p className={styles.title_header_navigation1}>{title}</p>

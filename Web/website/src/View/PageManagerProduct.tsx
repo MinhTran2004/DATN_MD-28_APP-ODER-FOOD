@@ -1,7 +1,7 @@
 import { Table } from "react-bootstrap";
 import styles from '../CSS/CSS_PageListAccount.module.css';
 
-export default function PageProduct() {
+export default function PageManagerProduct() {
     return (
         <div className={styles.container_header}>
             <div className={styles.container_link}>
