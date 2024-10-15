@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import { ItemNavigation } from "../Component/ComponentMain";
-import styles from "../CSS/CSS_MainPage.module.css";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { PageManagerAccount } from "./PageManagerAccount";
 import PageCreateProduct from "./PageCreateProduct";
@@ -12,10 +11,12 @@ import PageCreateCoupon from "./PageCreateCoupon";
 import PageManagerCoupon from "./PageManagerCoupon";
 import PageManagerMessenger from "./PageManagerMessenger";
 import PageManagerNotification from "./PageManagerNotification";
+import styles from "../CSS/CSS_MainPage.module.css";
 
 export default function PageMain() {
+    // eslint-disable-next-line
     const [page, setPage] = useState("");
-    const activeScreen = useRef("");
+    const activeScreen = useRef("PageManagerMessenger");
 
     const screenData = [
         { icon: require('../Image/icon_home.png'), title: 'Trang chủ', data: "undifined" },
@@ -36,7 +37,7 @@ export default function PageMain() {
                 <div className={styles.container_logo}>
                     <RxHamburgerMenu style={{ color: 'white', fontSize: 20 }} />
                     <img src={require('../Image/logo_app.png')} className={styles.image_logo} alt="" />
-                    <p style={{ color: 'white', marginBottom: 0 }}>Order Food</p>
+                    <p style={{ color: 'yellow', marginBottom: 0, fontSize: 17, fontWeight: 'bold' }}>Order<span style={{ color: 'white' }}>Food</span></p>
                 </div>
 
                 {screenData.map(item => (
@@ -72,8 +73,8 @@ export default function PageMain() {
                 {/* notification */}
                 {activeScreen.current === 'PageManagerNotification' && <PageManagerNotification />}
 
-                {/* notification */}
-                {activeScreen.current === 'PageMessenger' && <PageManagerMessenger />}
+                {/* messenger */}
+                {activeScreen.current === 'PageManagerMessenger' && <PageManagerMessenger />}
             </div>
 
         </div>

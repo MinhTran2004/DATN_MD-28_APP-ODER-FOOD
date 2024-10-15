@@ -91,6 +91,8 @@
 .name_messenger{
     margin-bottom: 0;
     font-weight: 500;
-    font-size: 18px;
+}
+.text_messenger{
+    font-size: 15px;
 }
 

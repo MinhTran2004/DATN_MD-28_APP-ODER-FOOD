@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "../CSS/Component.module.css";
-import { FaAngleRight, FaChevronDown } from "react-icons/fa6";
+import { FaChevronDown } from "react-icons/fa6";
 
 // Page Main
 const BodyNavigation = ({ event, text, page, activeScreen }: any) => {
@@ -70,14 +70,13 @@ export const InputTextCreateProduct = ({ title, placeholder, type }: any) => {
 export const ItemMessenger = () => {
     return (
         <div className={styles.container_messenger}>
-            <div style={{display: 'flex'}}>
-                <img src={require('../Image/icon_profile.png')} alt="" style={{ width: 50, height: 50 }} />
+            <div style={{ display: 'flex' }}>
+                <img src={require('../Image/icon_profile.png')} alt="" style={{ width: 45, height: 45 }} />
                 <div style={{ marginLeft: 10 }}>
                     <p className={styles.name_messenger}>Trần Công Minh</p>
                     <p className={styles.text_messenger}>Hello you, I want to drink everything</p>
                 </div>
             </div>
-            <FaAngleRight />
         </div>
     )
 }
