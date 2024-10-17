@@ -44,13 +44,11 @@ export default function App() {
           <Stack.Screen name="EditAddress" component={ScreenEditAddress} />
           <Stack.Screen name="Favourite" component={ScreenFavourite} />
           <Stack.Screen name="StoreRegistrantion" component={ScreenStoreRegistrantion} />
-<<<<<<< HEAD
           <Stack.Screen name="CategoryProduct" component={ScreenCategoryProduct} />
           <Stack.Screen name="Account" component={ScreenAccount} />
-=======
           <Stack.Screen name="CategoryProduct" component={ScreenCategoryProduct} /> 
           <Stack.Screen name="MessengerDetail" component={ScreenMessengerDetail} />
->>>>>>> df089c6d7bd6d6e0f57304913641b4b2d83ed176
+
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
