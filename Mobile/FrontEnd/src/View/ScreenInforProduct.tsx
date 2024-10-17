@@ -1,16 +1,20 @@
-import { Image, TouchableOpacity, View } from "react-native";
-import Feather from "react-native-vector-icons/Feather"
-import styles from "../CSS/CSSInforProduct";
-import { Text } from "react-native-paper";
-import { useState } from "react";
+import { Image, TouchableOpacity, View } from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
+import styles from '../CSS/CSSInforProduct';
+import { Text } from 'react-native-paper';
+import { useState } from 'react';
+import AddedToCartModal from '../Component/Component_ModalAddToCart';
 
 export default function ScreenInforProduct({navigation}:any) {
     const [favourite, setFavourite] = useState(false);
+    const [addedToCartModalVisible, setAddedToCartModalVisible] = useState(false);
+
+
     return (
         <View style={{ flex: 1 }}>
 
-            <TouchableOpacity style={styles.icon_return} onPress={() => navigation.navigate("Main")}>
-                <Feather name="arrow-left" style={{ fontSize: 30, color: "white" }} />
+            <TouchableOpacity style={styles.icon_return} onPress={() => navigation.navigate('Main')}>
+                <Feather name="arrow-left" style={{ fontSize: 30, color: 'white' }} />
             </TouchableOpacity>
 
             <Image source={require('../Image/image_product_demo.png')} style={styles.image_product} />
@@ -35,15 +39,17 @@ export default function ScreenInforProduct({navigation}:any) {
 
             <View style={styles.container_add_product}>
                 <TouchableOpacity style={styles.btn_messenger}>
-                    <Image source={require("../Image/icon_messenger.png")} style={{ width: 30, height: 30 }} />
+                    <Image source={require('../Image/icon_messenger.png')} style={{ width: 30, height: 30 }} />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.btn_cart}>
-                    <Image source={require("../Image/cart.png")} style={{ width: 35, height: 35 }} />
+                <TouchableOpacity style={styles.btn_cart} onPress={() => setAddedToCartModalVisible(true)}>
+                    <Image source={require('../Image/cart.png')} style={{ width: 35, height: 35 }} />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_sell}>
                     <Text style={{ fontSize: 20, color: 'white' }}>Mua ngay</Text>
                 </TouchableOpacity>
             </View>
+
+            <AddedToCartModal visible={addedToCartModalVisible} onClose={() => setAddedToCartModalVisible(false)}/>
         </View>
-    )
+    );
 }

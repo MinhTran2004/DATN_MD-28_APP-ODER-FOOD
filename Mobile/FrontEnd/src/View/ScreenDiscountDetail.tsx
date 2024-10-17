@@ -1,7 +1,7 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
-const DiscountDetailScreen = () => {
+const ScreenDiscountDetail = () => {
   return (
     <View style={styles.container}>
       <View style={styles.discountBox}>
@@ -46,20 +46,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
   },
   discountBox: {
     borderWidth: 1,
-    borderColor: "#ddd",
+    borderColor: '#ddd',
     borderRadius: 5,
     padding: 10,
     paddingHorizontal: 17,
-    backgroundColor: "#fce4e4",
+    backgroundColor: '#fce4e4',
     marginBottom: 10,
   },
   separator: {
     height: 1, // Chiều cao của thanh kẻ ngang
-    backgroundColor: "#cccccc", // Màu của thanh kẻ ngang
+    backgroundColor: '#cccccc', // Màu của thanh kẻ ngang
     marginVertical: 6, // Khoảng cách trên và dưới
   },
   detailBox: {
@@ -68,21 +68,21 @@ const styles = StyleSheet.create({
   discountTitle: {
     marginTop: 10,
     fontSize: 18,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 5,
   },
   expiryText: {
-    color: "red",
+    color: 'red',
     marginTop: 5,
   },
   sectionTitle: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginTop: 8,
   },
   note: {
-    color: "red",
+    color: 'red',
     marginTop: 10,
   },
 });
 
-export default DiscountDetailScreen;
+export default ScreenDiscountDetail;

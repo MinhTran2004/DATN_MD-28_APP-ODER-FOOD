@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   View,
   Text,
   TouchableOpacity,
   StyleSheet,
   ScrollView,
-} from "react-native";
+} from 'react-native';
 
-const DiscountScreen = ({ navigation }) => {
-  const [selectedTab, setSelectedTab] = useState("all");
+const ScreenDiscount = ({ navigation }) => {
+  const [selectedTab, setSelectedTab] = useState('all');
 
   return (
     <View style={styles.container}>
@@ -22,52 +22,52 @@ const DiscountScreen = ({ navigation }) => {
       <View style={styles.tabContainer}>
         <TouchableOpacity
           style={styles.tab}
-          onPress={() => setSelectedTab("all")}
+          onPress={() => setSelectedTab('all')}
         >
           <Text
             style={[
               styles.tabText,
-              selectedTab === "all" && styles.activeTabText,
+              selectedTab === 'all' && styles.activeTabText,
             ]}
           >
             Tất cả
           </Text>
-          {selectedTab === "all" && <View style={styles.activeTabLine} />}
+          {selectedTab === 'all' && <View style={styles.activeTabLine} />}
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tab}
-          onPress={() => setSelectedTab("store")}
+          onPress={() => setSelectedTab('store')}
         >
           <Text
             style={[
               styles.tabText,
-              selectedTab === "store" && styles.activeTabText,
+              selectedTab === 'store' && styles.activeTabText,
             ]}
           >
             Cửa hàng
           </Text>
-          {selectedTab === "store" && <View style={styles.activeTabLine} />}
+          {selectedTab === 'store' && <View style={styles.activeTabLine} />}
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tab}
-          onPress={() => setSelectedTab("shipping")}
+          onPress={() => setSelectedTab('shipping')}
         >
           <Text
             style={[
               styles.tabText,
-              selectedTab === "shipping" && styles.activeTabText,
+              selectedTab === 'shipping' && styles.activeTabText,
             ]}
           >
             Vận chuyển
           </Text>
-          {selectedTab === "shipping" && <View style={styles.activeTabLine} />}
+          {selectedTab === 'shipping' && <View style={styles.activeTabLine} />}
         </TouchableOpacity>
       </View>
 
       <ScrollView style={styles.discountContainer}>
         <TouchableOpacity
           style={styles.discountBox}
-          onPress={() => navigation.navigate("DiscountDetail")}
+          onPress={() => navigation.navigate('DiscountDetail')}
         >
           <Text style={styles.discountTitle}>Giảm 5%</Text>
           <Text>Đối với các đơn hàng có giá trị trên 50k</Text>
@@ -76,7 +76,7 @@ const DiscountScreen = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.discountBox}
-          onPress={() => navigation.navigate("DiscountDetail")}
+          onPress={() => navigation.navigate('DiscountDetail')}
         >
           <Text style={styles.discountTitle}>Giảm 5%</Text>
           <Text>Đối với các đơn hàng có giá trị trên 50k</Text>
@@ -92,47 +92,47 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
   },
   header: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     marginBottom: 10,
   },
   backButton: {
     width: 28,
     height: 28,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   backText: {
     fontSize: 18,
   },
   headerText: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginLeft: 10,
   },
   tabContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     marginTop: 10,
     marginBottom: 10,
   },
   tab: {
     flex: 1,
-    alignItems: "center",
+    alignItems: 'center',
   },
   tabText: {
     fontSize: 16,
-    color: "#000",
+    color: '#000',
   },
   activeTabText: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   activeTabLine: {
-    width: "100%",
+    width: '100%',
     height: 2,
-    backgroundColor: "#000",
+    backgroundColor: '#000',
     marginTop: 5,
   },
   discountContainer: {
@@ -140,21 +140,21 @@ const styles = StyleSheet.create({
   },
   discountBox: {
     borderWidth: 1,
-    borderColor: "#ddd",
+    borderColor: '#ddd',
     borderRadius: 5,
     padding: 15,
-    backgroundColor: "#fce4e4",
+    backgroundColor: '#fce4e4',
     marginBottom: 10,
   },
   discountTitle: {
     fontSize: 18,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 5,
   },
   expiryText: {
-    color: "red",
+    color: 'red',
     marginTop: 5,
   },
 });
 
-export default DiscountScreen;
+export default ScreenDiscount;
