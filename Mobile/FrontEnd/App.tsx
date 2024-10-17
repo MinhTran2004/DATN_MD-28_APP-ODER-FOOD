@@ -23,6 +23,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import ScreenStoreRegistrantion from './src/View/ScreenStoreRegistrantion';
 import ScreenDiscount from './src/View/ScreenDiscount';
 import ScreenDiscountDetail from './src/View/ScreenDiscountDetail';
+import ScreenOffer from './src/View/ScreenOffer';
 
 LogBox.ignoreLogs(['Warning: A props object containing a "key" prop is being spread into JSX']);
 
@@ -46,6 +47,7 @@ export default function App() {
           <Stack.Screen name="CategoryProduct" component={ScreenCategoryProduct} />
           <Stack.Screen name="Discount" component={ScreenDiscount} />
           <Stack.Screen name="DiscountDetail" component={ScreenDiscountDetail} />
+          <Stack.Screen name="Offer" component={ScreenOffer} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
