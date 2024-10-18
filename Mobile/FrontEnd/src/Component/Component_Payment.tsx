@@ -42,6 +42,7 @@ export default class Component_Payment {
             <View style={styles.container_detail_payment}>
                 <Text style={styles.text_detail}>{text}</Text>
                 <Text style={styles.price_detail}>${price}</Text>
+           
             </View>
         )
     }
