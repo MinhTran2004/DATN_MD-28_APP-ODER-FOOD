@@ -1,4 +1,4 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableOpacity, View, ToastAndroid } from "react-native";
 import styles from "../CSS/CSSLoginHome.js";
 import ComponentLogin from "../Component/Component_Login.tsx";
 import { useState } from "react";
@@ -8,6 +8,15 @@ export default function ScreenLogin({ navigation }: any) {
     const [account, setAccount] = useState("");
     const [password, setPassword] = useState("");
     const [isChecked, setIsChecked] = useState(true);
+
+    const handleLogin = () => {
+        if (account !== "admin" || password !== "1234") {
+            ToastAndroid.showWithGravity("Vui lòng nhập đúng tài khoản và mật khẩu", ToastAndroid.SHORT, ToastAndroid.BOTTOM);
+        } else {
+            ToastAndroid.showWithGravity("Đăng nhập thành công", ToastAndroid.SHORT, ToastAndroid.BOTTOM);
+            navigation.navigate('Main');
+        }
+    };
 
     return (
         <View style={styles.main}>
@@ -32,7 +41,7 @@ export default function ScreenLogin({ navigation }: any) {
                 </TouchableOpacity>
             </View>
 
-            <TouchableOpacity style={styles.layout_btn_login} onPress={() => navigation.navigate('Main')}>
+            <TouchableOpacity style={styles.layout_btn_login} onPress={handleLogin}>
                 <Text style={styles.text_btn_login}>Đăng Nhập</Text>
             </TouchableOpacity>
 

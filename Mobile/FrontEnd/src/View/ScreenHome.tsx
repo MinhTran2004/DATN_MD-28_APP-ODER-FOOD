@@ -26,7 +26,9 @@ export default function ScreenHome({ navigation }: any) {
                     </TouchableOpacity>
                 </View>
 
-                <ComponentHome.Input_Screach input={search} event={setSearch} />
+                <TouchableOpacity onPress={() => navigation.navigate('Search')}>
+                    <ComponentHome.Input_Screach input={search} event={setSearch} />
+                </TouchableOpacity>
 
                 {/* body  */}
                 <ComponentHome.Text_Title text={"Special Offers"} />
