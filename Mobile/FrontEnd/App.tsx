@@ -46,7 +46,7 @@ export default function App() {
           <Stack.Screen name="StoreRegistrantion" component={ScreenStoreRegistrantion} />
           <Stack.Screen name="CategoryProduct" component={ScreenCategoryProduct} />
           <Stack.Screen name="Account" component={ScreenAccount} />
-          <Stack.Screen name="CategoryProduct" component={ScreenCategoryProduct} /> 
+         
           <Stack.Screen name="MessengerDetail" component={ScreenMessengerDetail} />
 
         </Stack.Navigator>

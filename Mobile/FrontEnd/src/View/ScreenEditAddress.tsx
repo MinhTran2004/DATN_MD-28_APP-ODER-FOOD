@@ -1,10 +1,22 @@
-import { StyleSheet, Switch, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Switch, Text, TextInput, TouchableOpacity, View, Alert, Modal } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
 import ComponentEditAddress from "../Component/Component_EditAddress";
 import { useState } from "react";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons"; // Thêm thư viện này để dùng icon
 
-export default function ScreenEditAddress({ navigation }: any) {
+export default function ScreenEditAddress({ navigation, route }: any) {
     const [isSwitch, setIsSwitch] = useState(false);
+    const [isDialogVisible, setDialogVisible] = useState(false); // State cho Dialog
+    const isEdit = route.params.isEdit; // Lấy giá trị từ params
+
+    const handleSave = () => {
+        setDialogVisible(true); // Hiển thị dialog khi nhấn lưu
+        setTimeout(() => {
+            setDialogVisible(false);
+            navigation.goBack(); // Trở lại màn hình trước đó
+        }, 2000); // Tự động đóng dialog sau 2 giây
+    };
+
     return (
         <View style={styles.main}>
             {/* header */}
@@ -25,9 +37,9 @@ export default function ScreenEditAddress({ navigation }: any) {
             <ComponentEditAddress.SelectAddress name={"Chọn thành phố"} />
             <ComponentEditAddress.SelectAddress name={"Chọn quận"} />
             <ComponentEditAddress.SelectAddress name={"Chọn phường"} />
-            <TextInput style={[styles.inputTextContact, { marginTop: 0 }]} placeholder="Nhập đia chỉ cụ thể" />
+            <TextInput style={[styles.inputTextContact, { marginTop: 0 }]} placeholder="Nhập địa chỉ cụ thể" />
 
-            {/* mac dinh */}
+            {/* mặc định */}
             <Text style={styles.text_title}>Cài đặt</Text>
 
             <View style={styles.container_switch}>
@@ -35,21 +47,36 @@ export default function ScreenEditAddress({ navigation }: any) {
                 <Switch value={isSwitch} onChange={() => setIsSwitch(!isSwitch)} />
             </View>
 
-            <TouchableOpacity style={styles.container_save}>
+            <TouchableOpacity style={styles.container_save} onPress={handleSave}>
                 <Text style={styles.text_save}>Lưu</Text>
             </TouchableOpacity>
 
+            {/* Dialog Thành Công */}
+            <Modal
+                transparent={true}
+                visible={isDialogVisible}
+                animationType="fade"
+            >
+                <View style={styles.modalOverlay}>
+                    <View style={styles.dialogContainer}>
+                        <MaterialIcons name="check-circle" size={50} color="green" />
+                        {/* Hiển thị nội dung thông báo theo từng trường hợp */}
+                        <Text style={styles.dialogMessage}>
+                            {isEdit ? "Sửa địa chỉ thành công!" : "Thêm địa chỉ thành công!"}
+                        </Text>
+                    </View>
+                </View>
+            </Modal>
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
     main: {
         flex: 1,
         backgroundColor: 'white',
-        padding: 10
+        padding: 10,
     },
-    // header
     container_header: {
         width: '100%',
         flexDirection: 'row',
@@ -62,20 +89,17 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginLeft: 5,
     },
-    // lien he
     text_title: {
         fontSize: 20,
         fontWeight: 'bold',
         marginTop: 15,
-        marginBottom: 5
+        marginBottom: 5,
     },
     inputTextContact: {
         backgroundColor: '#e7e7e7',
         borderRadius: 10,
         paddingHorizontal: 10,
     },
-
-    // switch
     container_switch: {
         width: '100%',
         flexDirection: 'row',
@@ -85,8 +109,6 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 10,
     },
-
-    // save
     container_save: {
         width: '100%',
         backgroundColor: 'red',
@@ -98,6 +120,25 @@ const styles = StyleSheet.create({
     text_save: {
         color: 'white',
         fontSize: 20,
-        fontWeight: 'bold'
-    }
-})
+        fontWeight: 'bold',
+    },
+    modalOverlay: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+    },
+    dialogContainer: {
+        width: 250,
+        padding: 20,
+        backgroundColor: 'white',
+        borderRadius: 10,
+        alignItems: 'center',
+    },
+    dialogMessage: {
+        fontSize: 16,
+        color: 'black',
+        marginTop: 10,
+        textAlign: 'center',
+    },
+});
