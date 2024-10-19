@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import ScreenRegister from "./src/View/ScreenRegister";
 import ScreenHome from "./src/View/ScreenHome";
 import ScreenCart from "./src/View/ScreenCart";
+import ScreenAccount from "./src/View/ScreenAccount";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import ScreenProfile from "./src/View/ScreenProfile";
 import ScreenNotification from "./src/View/ScreenNotification";
@@ -50,6 +51,9 @@ export default function App() {
           <Stack.Screen name="InForOder" component={ScreenInForOder} />
           <Stack.Screen name="OrderCancelled" component={ScreenOrderCancelled} />
           <Stack.Screen name="OrderCompleted" component={ScreenOrderCompleted} />
+          <Stack.Screen name="Account" component={ScreenAccount} />
+          <Stack.Screen name="MessengerDetail" component={ScreenMessengerDetail} />
+
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>

@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default class ComponentAddress {
     static ItemAddress = ({ status, navigation }: any) => {
@@ -13,22 +13,21 @@ export default class ComponentAddress {
                         <Text style={styles.describe_address}>Số nhà 20a, ngõ 34/23 Đường Phương Canh</Text>
                         <Text style={styles.describe_address}>Phương Canh, Nam Từ Liêm, Hà Nội, Việt Nam</Text>
                     </View>
-                    <TouchableOpacity onPress={() => navigation.navigate('EditAddress')}>
+                    <TouchableOpacity onPress={() => navigation.navigate('EditAddress', { isEdit: true })}>
                         <Image source={require("../Image/icon_edit.png")} style={{ width: 20, height: 20 }} />
                     </TouchableOpacity>
                 </View>
-                {status ?
-                    (<Text style={styles.default_address}>Mặc định</Text>)
-                    :
-                    (<Text style={{ height: 0 }} />)
-                }
+                {status ? (
+                    <Text style={styles.default_address}>Mặc định</Text>
+                ) : (
+                    <Text style={{ height: 0 }} />
+                )}
             </View>
-        )
-    }
+        );
+    };
 }
 
 const styles = StyleSheet.create({
-    // ItemAddress
     container_address: {
         backgroundColor: 'white',
         borderRadius: 15,
@@ -41,10 +40,10 @@ const styles = StyleSheet.create({
     },
     phone_address: {
         fontSize: 16,
-        paddingLeft: 5
+        paddingLeft: 5,
     },
     describe_address: {
-        marginTop: 2
+        marginTop: 2,
     },
     default_address: {
         width: 70,
@@ -54,6 +53,6 @@ const styles = StyleSheet.create({
         borderWidth: 0.5,
         borderColor: 'red',
         borderRadius: 5,
-        color: 'red'
-    }
-})
+        color: 'red',
+    },
+});
