@@ -21,8 +21,9 @@ import ScreenAddress from "./src/View/ScreenAddress";
 import ScreenEditAddress from "./src/View/ScreenEditAddress";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import ScreenStoreRegistrantion from "./src/View/ScreenStoreRegistrantion";
+import ScreenMessengerDetail from "./src/View/ScreenMessengerDetail";
+import ScreenSearch from "./src/View/ScreenSearch";
 import ScreenInForOder from "./src/View/ScreenInForOder";
-
 
 LogBox.ignoreLogs(['Warning: A props object containing a "key" prop is being spread into JSX']);
 
@@ -44,10 +45,11 @@ export default function App() {
           <Stack.Screen name="Favourite" component={ScreenFavourite} />
           <Stack.Screen name="StoreRegistrantion" component={ScreenStoreRegistrantion} />
           <Stack.Screen name="CategoryProduct" component={ScreenCategoryProduct} />
+          <Stack.Screen name="MessengerDetail" component={ScreenMessengerDetail} />
+          <Stack.Screen name="Search" component={ScreenSearch} />
           <Stack.Screen name="InForOder" component={ScreenInForOder} />
           <Stack.Screen name="OrderCancelled" component={ScreenOrderCancelled} />
           <Stack.Screen name="OrderCompleted" component={ScreenOrderCompleted} />
-
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
