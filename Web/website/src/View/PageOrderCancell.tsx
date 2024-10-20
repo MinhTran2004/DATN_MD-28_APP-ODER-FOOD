@@ -1,5 +1,5 @@
 import { Table } from 'react-bootstrap';
-import styles from '../CSS/CSS_PageListAccount.module.css';
+import styles from '../CSS/CSS_PageTable.module.css';
 
 export const PageOrderCancell = () => {
 

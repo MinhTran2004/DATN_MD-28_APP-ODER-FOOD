@@ -1,5 +1,5 @@
 import { Table } from 'react-bootstrap';
-import styles from '../CSS/CSS_PageListAccount.module.css';
+import styles from '../CSS/CSS_PageTable.module.css';
 
 export const PageManagerAccount = () => {
 
@@ -15,7 +15,7 @@ export const PageManagerAccount = () => {
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20 }}>
                     <div className={styles.container_search} >
                         <input placeholder='Nhập tên khách hàng' className={styles.input_body} />
-                        <img src={require("../Image/icon_search.png")} alt="" />
+                        <img src={require("../Image/icon_search.png")} style={{ width: 20, height: 20 }} alt="" />
                     </div>
                     <div className={styles.container_filter}>
                         <img src={require('../Image/icon_filter.png')} style={{ width: 20, height: 20 }} alt='' />

@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     height: 94vh;
-    padding: 20px;
+    padding: 20px 20px 0;
     border-radius: 20px;
 }
 

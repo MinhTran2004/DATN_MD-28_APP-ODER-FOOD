@@ -6,7 +6,7 @@ import { FaChevronDown } from "react-icons/fa6";
 const BodyNavigation = ({ event, text, page, activeScreen }: any) => {
     return (
         <div className={styles.container_body_navigation} onClick={() => { event(text); activeScreen.current = page }}>
-            <p className={activeScreen.current === page ? styles.title_body_navigation2 : styles.title_body_navigation1}>{text}</p>
+            <p className={activeScreen.current === page ? styles.text_body_navigation2 : styles.text_body_navigation1}>{text}</p>
         </div>
     )
 }

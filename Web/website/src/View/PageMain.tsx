@@ -11,15 +11,17 @@ import PageCreateCoupon from "./PageCreateCoupon";
 import PageManagerCoupon from "./PageManagerCoupon";
 import PageManagerMessenger from "./PageManagerMessenger";
 import PageManagerNotification from "./PageManagerNotification";
-import styles from "../CSS/CSS_MainPage.module.css";
+import styles from "../CSS/CSS_Main.module.css";
+import PageHome from "./PageHome";
 
 export default function PageMain() {
     // eslint-disable-next-line
     const [page, setPage] = useState("");
-    const activeScreen = useRef("PageManagerMessenger");
+    const [buttonTab, setButtonTab] = useState(false);
+    const activeScreen = useRef("PageManagerAccount");
 
     const screenData = [
-        { icon: require('../Image/icon_home.png'), title: 'Trang chủ', data: "undifined" },
+        { icon: require('../Image/icon_home.png'), title: 'Trang chủ', data: "PageHome" },
         { icon: require('../Image/icon_user.png'), title: 'Quản lý tài khoản', data: 'PageManagerAccount' },
         { icon: require('../Image/icon_product.png'), title: 'Quản lý sản phẩm', data: [{ text: 'Tạo mới sản phẩm', page: 'PageCreateProduct' }, { text: 'Danh sách sản phẩm', page: 'PageManagerProduct' },] },
         { icon: require('../Image/icon_order.png'), title: 'Quản lý đơn hàng', data: [{ text: 'Chờ xác nhận', page: 'PageOrderConfirm' }, { text: 'Thành công', page: 'PageOrderSuccess' }, { text: 'Hủy đơn', page: 'PageOrderCancell' }] },
@@ -37,23 +39,47 @@ export default function PageMain() {
                 <div className={styles.container_logo}>
                     <RxHamburgerMenu style={{ color: 'white', fontSize: 20 }} />
                     <img src={require('../Image/logo_app.png')} className={styles.image_logo} alt="" />
-                    <p style={{ color: 'yellow', marginBottom: 0, fontSize: 17, fontWeight: 'bold' }}>Order<span style={{ color: 'white' }}>Food</span></p>
+                    <p className={styles.text_logo}>Order<span style={{ color: 'white' }}>Food</span></p>
                 </div>
 
-                {screenData.map(item => (
-                    <ItemNavigation icon={item.icon} title={item.title} data={item.data} event={setPage} activeScreen={activeScreen} />
+                {screenData.map((item, index) => (
+                    <ItemNavigation key={index} icon={item.icon} title={item.title} data={item.data} event={setPage} activeScreen={activeScreen} />
                 ))}
-
             </div>
-
 
             {/* content */}
             <div className={styles.container_content}>
-                <div className={styles.container_header}>
-                    <img src={require('../Image/icon_profile.png')} alt="" className={styles.img_header} />
-                    <p className={styles.text_header}>Minh Minh</p>
+                {/* header #1 */}
+                <div className={styles.container_header_1}>
+                    <div className={styles.container_header}>
+                        <img src={require('../Image/icon_profile.png')} alt="" className={styles.img_header} />
+                        <p className={styles.text_header}>Minh Minh</p>
+                    </div>
                 </div>
 
+                {/* header #2 */}
+                <div className={styles.container_header_2}>
+                    {buttonTab ?
+                        (<div className={styles.list_navigation}>
+                            <div className={styles.container_logo}>
+                                <RxHamburgerMenu style={{ color: 'white', fontSize: 20 }} onClick={() => setButtonTab(!buttonTab)}/>
+                                <img src={require('../Image/logo_app.png')} className={styles.image_logo} alt="" />
+                                <p className={styles.text_logo}>Order<span style={{ color: 'white' }}>Food</span></p>
+                            </div>
+
+                            {screenData.map((item, index) => (
+                                <ItemNavigation key={index} icon={item.icon} title={item.title} data={item.data} event={setPage} activeScreen={activeScreen} />
+                            ))}
+                        </div>)
+                        :
+                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                            <RxHamburgerMenu style={{ color: 'black', fontSize: 20 }} onClick={() => setButtonTab(!buttonTab)}/>
+                            <img src={require('../Image/icon_profile.png')} alt="" className={styles.img_header} />
+                        </div>}
+                </div>
+
+                {/* home */}
+                {activeScreen.current === 'PageHome' && <PageHome />}
                 {/* account */}
                 {activeScreen.current === 'PageManagerAccount' && <PageManagerAccount />}
 
