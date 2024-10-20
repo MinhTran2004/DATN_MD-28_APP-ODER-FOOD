@@ -1,0 +1,118 @@
+/* naviagtion */
+.container_item_navigation {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* header */
+.container_header_navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 15px;
+}
+
+.icon_header_navigation {
+    width: 21px;
+    height: 21px;
+}
+
+.title_header_navigation1{
+    font-size: 15px;
+    color: white;
+    font-weight: 500;
+    margin-left: 8px;
+    margin-bottom: 0;
+}
+
+.title_header_navigation2{
+    font-size: 15px;
+    color: yellow;
+    font-weight: 500;
+    margin-left: 8px;
+    margin-bottom: 0;
+}
+
+.icon_title_navigation{
+    color: white;
+    font-size: 12px;
+}
+
+/* body */
+.container_body_navigation{
+    margin: 0 8px;
+}
+
+.text_body_navigation1{
+    color: white;
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.text_body_navigation2{
+    color: black;
+    background-color: #edb300;
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* page create product */
+.form_input{
+    margin: 0 20px 15px;
+}
+
+.title_input{
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.text_input{
+    width: 100%;
+    background-color: #eaeaea;
+    outline: none;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 15px;
+}
+
+/* page messenger */
+.container_messenger{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.name_messenger{
+    margin-bottom: 0;
+    font-weight: 500;
+}
+.text_messenger{
+    font-size: 15px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .title_header_navigation1, .title_header_navigation2 {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .icon_header_navigation{
+        height: 20px;
+        width: 20px;
+    }
+    .title_header_navigation1, .title_header_navigation2 {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+    .icon_header_navigation{
+        height: 20px;
+        width: 20px;
+    }
+}
