@@ -79,7 +79,7 @@ export default function PageHome() {
             </div>
 
             <div className={styles.container_body}>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div className={styles.container_baner}>
                     {/* banner1 */}
                     <RenderLineChart />
 

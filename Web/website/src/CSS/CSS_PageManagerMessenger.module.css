@@ -68,13 +68,13 @@
     display: flex;
     justify-content: space-between;
     position: absolute;
-    width: 69%;
-    padding: 10px;
+    width: 66.5%;
     bottom: 0;
+    padding: 10px;
 }
 
 .input_footer{
-    width: 92.5%;
+    width: 90%;
     padding: 8px 10px;
     border-radius: 10px;
     border: 1px solid #acacac;
@@ -83,10 +83,11 @@
 
 .btn_detail{
     background-color: #448bff;
-    width: 7%;
+    width: 9.5%;
     border: 0;
     border-radius: 10px;
     color: white;
+    font-weight: 500;
 }
 
 

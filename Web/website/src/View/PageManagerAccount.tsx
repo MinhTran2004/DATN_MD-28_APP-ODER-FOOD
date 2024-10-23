@@ -23,32 +23,35 @@ export const PageManagerAccount = () => {
                     </div>
                 </div>
 
-                <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Ảnh</th>
-                            <th>Tên người dùng</th>
-                            <th>Tài khoản</th>
-                            <th>Mật khẩu</th>
-                            <th>Số điện thoại</th>
-                            <th>Ngày tạo</th>
-                            <th>Trạng thái</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Link ảnh</td>
-                            <td>Trần Công Minh</td>
-                            <td>minh209204@gmail.com</td>
-                            <td>minh209204</td>
-                            <td>0987654321</td>
-                            <td>12/10/2024</td>
-                            <td>Đang sử dụng</td>
-                        </tr>
-                    </tbody>
-                </Table>
+                <div style={{ overflow: 'auto' }}>
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Ảnh</th>
+                                <th>Tên người dùng</th>
+                                <th>Tài khoản</th>
+                                <th>Mật khẩu</th>
+                                <th>Số điện thoại</th>
+                                <th>Ngày tạo</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Link ảnh</td>
+                                <td>Trần Công Minh</td>
+                                <td>minh209204@gmail.com</td>
+                                <td>minh209204</td>
+                                <td>0987654321</td>
+                                <td>12/10/2024</td>
+                                <td>Đang sử dụng</td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                </div>
+
             </div>
         </div>
     )

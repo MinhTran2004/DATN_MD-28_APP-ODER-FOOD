@@ -13,12 +13,17 @@ import PageManagerMessenger from "./PageManagerMessenger";
 import PageManagerNotification from "./PageManagerNotification";
 import styles from "../CSS/CSS_Main.module.css";
 import PageHome from "./PageHome";
+import { Offcanvas } from "react-bootstrap";
 
 export default function PageMain() {
     // eslint-disable-next-line
     const [page, setPage] = useState("");
-    const [buttonTab, setButtonTab] = useState(false);
-    const activeScreen = useRef("PageManagerAccount");
+    const activeScreen = useRef("PageCreateProduct");
+
+    // naviagtion
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const screenData = [
         { icon: require('../Image/icon_home.png'), title: 'Trang chủ', data: "PageHome" },
@@ -49,6 +54,7 @@ export default function PageMain() {
 
             {/* content */}
             <div className={styles.container_content}>
+
                 {/* header #1 */}
                 <div className={styles.container_header_1}>
                     <div className={styles.container_header}>
@@ -59,23 +65,30 @@ export default function PageMain() {
 
                 {/* header #2 */}
                 <div className={styles.container_header_2}>
-                    {buttonTab ?
-                        (<div className={styles.list_navigation}>
-                            <div className={styles.container_logo}>
-                                <RxHamburgerMenu style={{ color: 'white', fontSize: 20 }} onClick={() => setButtonTab(!buttonTab)}/>
-                                <img src={require('../Image/logo_app.png')} className={styles.image_logo} alt="" />
-                                <p className={styles.text_logo}>Order<span style={{ color: 'white' }}>Food</span></p>
-                            </div>
-
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <RxHamburgerMenu style={{ color: 'black', fontSize: 23 }} onClick={handleShow} />
+                        <div className={styles.container_header}>
+                            <img src={require('../Image/icon_profile.png')} alt="" className={styles.img_header} />
+                            <p className={styles.text_header}>Minh Minh</p>
+                        </div>
+                    </div>
+                    {/* navagiton #2 */}
+                    <Offcanvas show={show} onHide={handleClose} style={{ backgroundColor: 'black' }}>
+                        <Offcanvas.Header closeButton>
+                            <Offcanvas.Title>
+                                <div className={styles.container_logo}>
+                                    <RxHamburgerMenu style={{ color: 'white', fontSize: 20 }} onClick={handleClose}/>
+                                    <img src={require('../Image/logo_app.png')} className={styles.image_logo} alt="" />
+                                    <p className={styles.text_logo}>Order<span style={{ color: 'white' }}>Food</span></p>
+                                </div>
+                            </Offcanvas.Title>
+                        </Offcanvas.Header>
+                        <Offcanvas.Body>
                             {screenData.map((item, index) => (
                                 <ItemNavigation key={index} icon={item.icon} title={item.title} data={item.data} event={setPage} activeScreen={activeScreen} />
                             ))}
-                        </div>)
-                        :
-                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                            <RxHamburgerMenu style={{ color: 'black', fontSize: 20 }} onClick={() => setButtonTab(!buttonTab)}/>
-                            <img src={require('../Image/icon_profile.png')} alt="" className={styles.img_header} />
-                        </div>}
+                        </Offcanvas.Body>
+                    </Offcanvas>
                 </div>
 
                 {/* home */}
