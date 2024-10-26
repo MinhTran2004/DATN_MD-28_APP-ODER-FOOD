@@ -3,12 +3,19 @@ import styles from "../CSS/CSSLoginHome.js";
 import ComponentLogin from "../Component/Component_Login.tsx";
 import { useState } from "react";
 import CheckBox from "@react-native-community/checkbox";
+import { ViewModelAccount } from "../ViewModel/VM_Account.ts";
 
 export default function ScreenLogin({ navigation }: any) {
-    const [account, setAccount] = useState("");
-    const [password, setPassword] = useState("");
+    const { account, password, setAccount, setPassword, checkNullInput } = ViewModelAccount();
+
+    const a = () => {
+        const b = checkNullInput("username", account, password, "phone");
+        console.log(b);
+    }
+
     const [isChecked, setIsChecked] = useState(true);
 
+<<<<<<< HEAD
     const handleLogin = () => {
         if (account !== "admin" || password !== "1234") {
             ToastAndroid.showWithGravity("Vui lòng nhập đúng tài khoản và mật khẩu", ToastAndroid.SHORT, ToastAndroid.BOTTOM);
@@ -17,6 +24,8 @@ export default function ScreenLogin({ navigation }: any) {
             navigation.navigate('Main');
         }
     };
+=======
+>>>>>>> 91e1543 (Tao bang account + address + category + product cho backend)
 
     return (
         <View style={styles.main}>
@@ -41,7 +50,12 @@ export default function ScreenLogin({ navigation }: any) {
                 </TouchableOpacity>
             </View>
 
+<<<<<<< HEAD
             <TouchableOpacity style={styles.layout_btn_login} onPress={handleLogin}>
+=======
+            {/* <TouchableOpacity style={styles.layout_btn_login} onPress={() => navigation.navigate('Main')}> */}
+            <TouchableOpacity style={styles.layout_btn_login} onPress={() => a()}>
+>>>>>>> 91e1543 (Tao bang account + address + category + product cho backend)
                 <Text style={styles.text_btn_login}>Đăng Nhập</Text>
             </TouchableOpacity>
 
