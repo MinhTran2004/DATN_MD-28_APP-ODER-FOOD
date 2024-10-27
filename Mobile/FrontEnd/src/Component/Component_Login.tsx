@@ -3,7 +3,7 @@ import { Image, StyleSheet, TextInput, TouchableOpacity, View } from "react-nati
 
 export default class ComponentLogin {
 
-    static InputTextLogin = ({ placeholder, icon, input, event }: any) => {
+    static InputTextLogin = ({ placeholder, icon, input, event ,isPasssword}: any) => {
         const [isHovered, setIsHovered] = useState(false);
         return (
             <TouchableOpacity
@@ -17,6 +17,7 @@ export default class ComponentLogin {
                         onFocus={() => setIsHovered(true)}
                         onBlur={() => setIsHovered(false)}
                         value={input}
+                        secureTextEntry={isPasssword}
                         onChangeText={(text) => event(text)}
                         style={styles.text_input} />
                 </View>
