@@ -6,9 +6,15 @@ import CheckBox from "@react-native-community/checkbox";
 import { ViewModelAccount } from "../ViewModel/VM_Account.ts";
 import { handleLogin } from "../service/Account.Service.ts";
 
+
+
 export default function ScreenLogin({ navigation }: any) {
     const { account, password, setAccount, setPassword } = ViewModelAccount();
     const [isChecked, setIsChecked] = useState(true);
+
+
+
+
     return (
         <View style={styles.main}>
             <Image source={require("../Image/logo_app.png")} style={styles.img_logo} />
