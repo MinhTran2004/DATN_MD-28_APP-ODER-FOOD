@@ -1,5 +1,5 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import CompmentOder from "../Component/CompomentOder";
+import CompmentOder from "../component/CompomentOder";
 
 export default function ScreenOrderWaiting ({navigation}:any) {
 

@@ -1,46 +1,39 @@
 import React, { useState } from "react";
 import { Image, Text, TouchableOpacity, View, Alert } from "react-native";
-import styles from "../CSS/CSSLoginHome.js";
-import ComponentLogin from "../Component/Component_Login.tsx";
+import styles from "../css/CSSLoginHome.js";
+import ComponentLogin from "../component/Component_Login.tsx";
 import CheckBox from "@react-native-community/checkbox";
-import { ViewModelAccount } from "../ViewModel/VM_Account.ts";
-import { handleLogin } from "../service/Account.Service.ts";
-
-
+import { ViewModelAccount } from "../viewmodel/VM_Account.ts";
 
 export default function ScreenLogin({ navigation }: any) {
-    const { account, password, setAccount, setPassword } = ViewModelAccount();
-    const [isChecked, setIsChecked] = useState(true);
-
-
-
+    const ViewModel = ViewModelAccount(navigation);
 
     return (
         <View style={styles.main}>
             <Image source={require("../Image/logo_app.png")} style={styles.img_logo} />
-            <Text style={styles.text_title}>Đăng Nhập Vào Tài Khoản Của Bạn</Text>
+            <Text style={styles.text_title}>Đăng Nhập</Text>
 
             <View style={{ marginTop: 50, width: '100%' }}>
                 <ComponentLogin.InputTextLogin 
                     placeholder={"Nhập tài khoản"} 
                     icon={require("../Image/account.png")} 
-                    input={account} 
-                    event={setAccount} 
+                    input={ViewModel.account} 
+                    event={ViewModel.setAccount} 
                 />
                 <ComponentLogin.InputTextLogin 
                     isPasssword 
                     placeholder={"Nhập mật khẩu"} 
                     icon={require("../Image/password.png")} 
-                    input={password} 
-                    event={setPassword} 
+                    input={ViewModel.password} 
+                    event={ViewModel.setPassword} 
                 />
             </View>
 
             <View style={styles.container_status_account}>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                     <CheckBox
-                        value={isChecked}
-                        onValueChange={setIsChecked}
+                        value={ViewModel.isChecked}
+                        onValueChange={ViewModel.setIsChecked}
                     />
                     <Text>Ghi nhớ đăng nhập</Text>
                 </View>
@@ -49,10 +42,7 @@ export default function ScreenLogin({ navigation }: any) {
                 </TouchableOpacity>
             </View>
 
-            <TouchableOpacity style={styles.layout_btn_login} onPress={()=>{
-                handleLogin(account,password,navigation)
-            }
-            }>
+            <TouchableOpacity style={styles.layout_btn_login} onPress={ViewModel.getAccountByAccountAndPassword}>
                 <Text style={styles.text_btn_login}>Đăng Nhập</Text>
             </TouchableOpacity>
 

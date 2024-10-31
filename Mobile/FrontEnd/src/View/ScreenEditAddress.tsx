@@ -1,6 +1,6 @@
 import { StyleSheet, Switch, Text, TextInput, TouchableOpacity, View, Alert, Modal } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
-import ComponentEditAddress from "../Component/Component_EditAddress";
+import ComponentEditAddress from "../component/Component_EditAddress";
 import { useState } from "react";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons"; // Thêm thư viện này để dùng icon
 

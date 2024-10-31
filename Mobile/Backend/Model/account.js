@@ -5,7 +5,6 @@ const AccountSchema = new mongoose.Schema({
     account: {type:String, required: true},
     password: {type:String, required: true},
     image: {type:String,default:'https://i.pinimg.com/736x/0d/64/98/0d64989794b1a4c9d89bff571d3d5842.jpg'},
-    phone: {type:String, required: true},
     role: {type:String, required: true},
     status: {type:String, required: true},
 },{

@@ -1,7 +1,7 @@
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
-import styles from "../CSS/CSSCart";
-import ComponentCart from "../Component/Component_Cart";
+import styles from "../css/CSSCart";
+import ComponentCart from "../component/Component_Cart";
 
 export default function ScreenCart({ navigation }: any) {
     return (

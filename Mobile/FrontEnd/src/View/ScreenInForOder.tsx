@@ -3,9 +3,9 @@ import { Image, ScrollView, TouchableOpacity, View } from "react-native";
 import { Text } from "react-native-paper";
 import Feather from "react-native-vector-icons/Feather";
 
-import styles from "../CSS/CSSPayment";
+import styles from "../css/CSSPayment";
 
-import CompmentOder from "../Component/CompomentOder";
+import CompmentOder from "../component/CompomentOder";
 import Fontisto from "react-native-vector-icons/Fontisto";
 
 export default function ScreenInForOder({ navigation }: any) {

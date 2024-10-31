@@ -1,6 +1,6 @@
 import { Image, ScrollView, Text, View } from "react-native";
-import styles from "../CSS/CSSProfile";
-import Component_Profile from "../Component/Component_Profile";
+import styles from "../css/CSSProfile";
+import Component_Profile from "../component/Component_Profile";
 export default function ScreenProfile({navigation}:any) {
     return (
         <ScrollView style={{ flex: 1, backgroundColor: 'white' }}>
