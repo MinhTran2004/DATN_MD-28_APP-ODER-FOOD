@@ -1,15 +1,17 @@
-import { useState } from "react";
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { useState } from 'react';
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Product } from '../model/Model_Product';
+import { Category } from '../model/Model_Category';
 
 export default class ComponentHome {
     static Input_Screach = ({ input, event }: any) => {
         return (
             <View style={styles.container_sreach}>
-                <Image source={require("../Image/search.png")} style={styles.image_search} />
+                <Image source={require('../Image/search.png')} style={styles.image_search} />
                 <TextInput placeholder="Nhập tên san phẩm cần tìm" value={input} onChangeText={(text) => event(text)} />
             </View>
-        )
-    }
+        );
+    };
 
     static Text_Title = ({ text }: any) => {
         return (
@@ -17,8 +19,8 @@ export default class ComponentHome {
                 <Text style={styles.text_title}>{text}</Text>
                 <Text style={[styles.text_title, { color: '#37c666' }]}>See All</Text>
             </View>
-        )
-    }
+        );
+    };
 
     static SelectCategoryProductVertical = ({ navigation, icon, text }: any) => {
         return (
@@ -26,18 +28,18 @@ export default class ComponentHome {
                 <Image source={icon} style={styles.icon_select_vertical} />
                 <Text style={styles.text_select_vertical}>{text}</Text>
             </TouchableOpacity>
-        )
-    }
+        );
+    };
 
-    static ProductHozirontal = ({ navigation }: any) => {
+    static ProductHozirontal = ({ product, categories, navigation }: { product: Product, categories: Category[], navigation: any }) => {
         const [favourite, setFavourite] = useState(false);
         return (
-            <TouchableOpacity style={styles.container_product_hozizontal} onPress={() => navigation.navigate("InforProduct")}>
-                <Image source={require("../Image/image_product_demo.png")} style={styles.image_product_hozizontal} />
-                <Text numberOfLines={1} style={styles.name_product_hozizontal}>Mixed Salad BonBum</Text>
-                <Text>Hambuger</Text>
+            <TouchableOpacity style={styles.container_product_hozizontal} onPress={() => navigation.navigate('InforProduct')}>
+                <Image source={{ uri: product.image }} style={styles.image_product_hozizontal} />
+                <Text numberOfLines={1} style={styles.name_product_hozizontal}>{product.name}</Text>
+                <Text>{categories.find((category) => category._id === product.idCategory).name}</Text>
                 <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <Text style={styles.price_product_hozizontal}>$23.000</Text>
+                    <Text style={styles.price_product_hozizontal}>{product.price}</Text>
                     <TouchableOpacity onPress={() => setFavourite(!favourite)}>
                         {favourite ?
                             (<Image source={require('../Image/icon_showFavourite.png')} style={{ width: 20, height: 20 }} />)
@@ -47,8 +49,8 @@ export default class ComponentHome {
                     </TouchableOpacity>
                 </View>
             </TouchableOpacity>
-        )
-    }
+        );
+    };
 
     static SelectCategoryProuctHozizontal = ({ icon, text }: any) => {
         return (
@@ -58,22 +60,22 @@ export default class ComponentHome {
                     <Text style={styles.text_select_hozirontal}>{text}</Text>
                 </View>
             </TouchableOpacity>
-        )
-    }
+        );
+    };
 
-    static ProductVertical = ({ navigation }: any) => {
+    static ProductVertical = ({ product, categories, navigation }: { product: Product, categories: Category[], navigation: any }) => {
         const [favourite, setFavourite] = useState(false);
 
         return (
-            <TouchableOpacity style={styles.container_product_vertical} onPress={() => navigation.navigate("InforProduct")}>
-                <Image source={require("../Image/image_product_demo.png")} style={styles.image_product_vertical} />
+            <TouchableOpacity style={styles.container_product_vertical} onPress={() => navigation.navigate('InforProduct')}>
+                <Image source={{ uri: product.image }} style={styles.image_product_vertical} />
                 <View style={{ width: '100%', marginLeft: 10, justifyContent: 'space-between' }}>
                     <View>
-                        <Text style={styles.name_product_vertical}>Vegetarian Noodles</Text>
-                        <Text>Hambuger</Text>
+                        <Text style={styles.name_product_vertical}>{product.name}</Text>
+                        <Text>{categories.find((category) => category._id === product.idCategory).name}</Text>
                     </View>
                     <View style={{ width: '72%', flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <Text style={styles.price_product_vertical}>$23.000</Text>
+                        <Text style={styles.price_product_vertical}>{product.price}</Text>
                         <TouchableOpacity onPress={() => setFavourite(!favourite)}>
                             {favourite ?
                                 (<Image source={require('../Image/icon_showFavourite.png')} style={{ width: 20, height: 20 }} />)
@@ -84,8 +86,8 @@ export default class ComponentHome {
                     </View>
                 </View>
             </TouchableOpacity>
-        )
-    }
+        );
+    };
 
 }
 
@@ -97,7 +99,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ebebeb',
         borderRadius: 10,
         marginTop: 15,
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
     },
     image_search: {
         width: 25,
@@ -109,13 +111,13 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         fontSize: 18,
         fontWeight: 'bold',
-        color: 'black'
+        color: 'black',
     },
 
     // SelectCategoryProductVertical
     container_select_vertical: {
         width: '25%',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     icon_select_vertical: {
         width: 40,
@@ -143,7 +145,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: '500',
         color: 'black',
-        marginLeft: 5
+        marginLeft: 5,
     },
 
     // ProductHozirontal
@@ -152,24 +154,24 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 10,
         marginRight: 10,
-        padding: 10
+        padding: 10,
     },
     image_product_hozizontal: {
         width: 140,
         height: 140,
         alignItems: 'center',
-        borderRadius: 10
+        borderRadius: 10,
     },
     name_product_hozizontal: {
         fontWeight: 'bold',
         fontSize: 17,
-        color: 'black'
+        color: 'black',
     },
     price_product_hozizontal: {
         fontSize: 18,
         color: '#42bb6a',
         fontWeight: 'bold',
-        marginTop: 5
+        marginTop: 5,
     },
 
     // ProductVertical
@@ -185,17 +187,17 @@ const styles = StyleSheet.create({
     image_product_vertical: {
         width: 90,
         height: 90,
-        borderRadius: 10
+        borderRadius: 10,
     },
     name_product_vertical: {
         fontWeight: 'bold',
         fontSize: 17,
-        color: 'black'
+        color: 'black',
     },
     price_product_vertical: {
         fontSize: 18,
         color: '#42bb6a',
         fontWeight: 'bold',
-        marginTop: 5
-    }
-})
+        marginTop: 5,
+    },
+});
