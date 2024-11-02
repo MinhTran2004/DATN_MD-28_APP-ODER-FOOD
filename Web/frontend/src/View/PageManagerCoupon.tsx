@@ -1,7 +1,9 @@
 import { Table } from 'react-bootstrap';
 import styles from '../CSS/CSS_PageTable.module.css';
+import ViewModelCoupon from '../ViewModel/VM_Coupon';
 
 export default function PageManagerCoupon() {
+    const viewModel = ViewModelCoupon();
 
     return (
         <div className={styles.container_header}>
@@ -14,7 +16,7 @@ export default function PageManagerCoupon() {
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 20 }}>
                     <div className={styles.container_search} >
-                        <input placeholder='Nhập tên khách hàng' className={styles.input_body} />
+                        <input placeholder='Nhập mã giảm giá' className={styles.input_body} />
                         <img src={require("../Image/icon_search.png")} alt="" />
                     </div>
                     <div className={styles.container_filter}>
@@ -23,79 +25,42 @@ export default function PageManagerCoupon() {
                     </div>
                 </div>
 
+                <div className={styles.container_table}>
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên mã</th>
+                                <th>Thể loại</th>
+                                <th>Số lượng</th>
+                                <th>Điều kiện đơn hàng</th>
+                                <th>Ngày bắt đầu</th>
+                                <th>Ngày kết thúc</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {viewModel.data.map((item) => (
+                                <tr key={item._id}>
+                                    <td>{item._id}</td>
+                                    <td>{item.name}</td>
+                                    <td>{item.discountType}</td>
+                                    <td>{item.quantity}</td>
+                                    <td>{item.condition.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</td>
+                                    <td>{item.startDate}</td>
+                                    <td>{item.endDate}</td>
+                                    <td>{item.status}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </Table>
+                </div>
 
-                <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Tên mã</th>
-                            <th>Ảnh</th>
-                            <th>Thể loại</th>
-                            <th>Đã dùng</th>
-                            <th>Số lượng</th>
-                            <th>Điều kiện</th>
-                            <th>Hạn sử dụng</th>
-                            <th>Trạng thái</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Giảm tối đa 30k</td>
-                            <td>Link ảnh</td>
-                            <td>Vận chuyển</td>
-                            <td>20</td>
-                            <td>45</td>
-                            <td>Đơn tối thiểu 0Đ </td>
-                            <td>15/10/2024</td>
-                            <td>Đang sử dụng</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Giảm 7% tối đa 20k</td>
-                            <td>Link ảnh</td>
-                            <td>Đơn hàng</td>
-                            <td>16</td>
-                            <td>40</td>
-                            <td>Đơn tối thiểu 200k</td>
-                            <td>8/10/2024</td>
-                            <td>Đã hết hạn</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Giảm tối đa 100k</td>
-                            <td>Link ảnh</td>
-                            <td>Vận chuyển</td>
-                            <td>20</td>
-                            <td>50</td>
-                            <td>Đơn tối thiểu 200k </td>
-                            <td>10/10/2024</td>
-                            <td>Đang sử dụng</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Giảm 50k</td>
-                            <td>Link ảnh</td>
-                            <td>Đơn hàng</td>
-                            <td>24</td>
-                            <td>60</td>
-                            <td>Đơn tối thiểu 100k </td>
-                            <td>18/10/2024</td>
-                            <td>Đang sử dụng</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Giảm 12% tối đa 50k</td>
-                            <td>Link ảnh</td>
-                            <td>Vận chuyển</td>
-                            <td>34</td>
-                            <td>40</td>
-                            <td>Đơn tối thiểu 150k </td>
-                            <td>25/10/2024</td>
-                            <td>Đang sử dụng</td>
-                        </tr>
-                    </tbody>
-                </Table>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <button className={styles.btn_CreateProduct}>Quay lại</button>
+                    <button className={styles.btn_CreateProduct}>Tiếp theo</button>
+                </div>
+
 
             </div>
         </div>

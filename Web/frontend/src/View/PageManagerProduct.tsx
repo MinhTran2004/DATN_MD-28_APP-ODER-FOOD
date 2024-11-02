@@ -1,9 +1,9 @@
 import { Table } from "react-bootstrap";
 import styles from '../CSS/CSS_PageTable.module.css';
-import { ViewModelProduct } from "../ViewModel/VM_Product";
+// import { ViewModelProduct } from "../ViewModel/VM_Product";
 
 export default function PageManagerProduct() {
-    const viewModel = ViewModelProduct();
+    // const viewModel = ViewModelProduct();
     
 
     return (

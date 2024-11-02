@@ -13,7 +13,6 @@ export default class SeviceProduct {
         }
     }
 
-
     static async getAllProductByLimit(limit: number) {
         try {
             const response = (await axios.get(`${this.url}/getAllProductByLimit`, { params: { skip: limit - 10, limit: limit } })).data;

@@ -22,35 +22,37 @@ export const PageOrderCancell = () => {
                         <p className={styles.text_filter}>Hiển bộ lọc</p>
                     </div>
                 </div>
+                <div className={styles.container_table}>
 
-                <Table striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>ID khách hàng</th>
-                            <th>Số lượng</th>
-                            <th>Địa chỉ</th>
-                            <th>Số điện thoại</th>
-                            <th>Thời gian tạo</th>
-                            <th>Thời gian hủy</th>
-                            <th>Tổng tiền</th>
-                            <th>Trạng thái</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>2004</td>
-                            <td>5</td>
-                            <td>Số nhà 2, Mỹ Đình, Hà nội</td>
-                            <td>0987654321</td>
-                            <td>20:30 12/10/2024</td>
-                            <td>23:30 12/10/2024</td>
-                            <td>12.000</td>
-                            <td>Chờ xác nhận</td>
-                        </tr>
-                    </tbody>
-                </Table>
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>ID khách hàng</th>
+                                <th>Số lượng</th>
+                                <th>Địa chỉ</th>
+                                <th>Số điện thoại</th>
+                                <th>Thời gian tạo</th>
+                                <th>Thời gian hủy</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>2004</td>
+                                <td>5</td>
+                                <td>Số nhà 2, Mỹ Đình, Hà nội</td>
+                                <td>0987654321</td>
+                                <td>20:30 12/10/2024</td>
+                                <td>23:30 12/10/2024</td>
+                                <td>12.000</td>
+                                <td>Chờ xác nhận</td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                </div>
             </div>
         </div>
     )

@@ -22,12 +22,12 @@ export const ItemNavigation = ({ icon, title, data, event, activeScreen }: any) 
                         <p className={activeScreen.current !== data ? styles.title_header_navigation1 : styles.title_header_navigation2}>{title}</p>
                     </div>)
                     :
-                    (<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                    (<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }} onClick={() => setClickHeader(!clickHeader)}>
                         <div style={{ display: 'flex' }}>
                             <img src={icon} className={styles.icon_header_navigation} alt="" />
                             <p className={styles.title_header_navigation1}>{title}</p>
                         </div>
-                        <FaChevronDown className={styles.icon_title_navigation} onClick={() => { setClickHeader(!clickHeader) }} />
+                        <FaChevronDown className={styles.icon_title_navigation} />
                     </div>)
                 }
             </div>
@@ -51,17 +51,22 @@ export const ItemNavigation = ({ icon, title, data, event, activeScreen }: any) 
 export const InputTextCreateProduct = ({ title, placeholder, type, state, event }: any) => {
     return (
         <div>
-            {type ?
+            {type === 'textarea' ?
                 (<div className={styles.form_input}>
                     <p className={styles.title_input}>{title}</p>
-                    <textarea className={styles.text_input} placeholder={placeholder} rows={5} value={state} onChange={(text) => event(text.target.value)}/>
+                    <textarea className={styles.text_input} placeholder={placeholder} rows={5} value={state} onChange={(text) => event(text.target.value)} />
                 </div>)
                 :
                 (<div className={styles.form_input}>
                     <p className={styles.title_input}>{title}</p>
-                    <input className={styles.text_input} placeholder={placeholder} type="text" value={state} onChange={(text => event(text.target.value))}/>
+                    {type === 'text' ?
+                        <input className={styles.text_input} placeholder={placeholder} type={type} value={state} onChange={(text => event(text.target.value))} />
+                        :
+                        <input className={styles.text_input} placeholder={placeholder} type={type} value={state} onChange={(text => event(text.target.value))} />
+
+                    }
                 </div>)}
-        </div> 
+        </div>
     )
 }
 

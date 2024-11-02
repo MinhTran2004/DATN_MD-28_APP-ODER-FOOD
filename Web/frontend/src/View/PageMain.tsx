@@ -18,7 +18,7 @@ export default function PageMain() {
     // eslint-disable-next-line
     const [page, setPage] = useState("");
     const [buttonTab, setButtonTab] = useState(false);
-    const activeScreen = useRef("PageCreateProduct");
+    const activeScreen = useRef("PageManagerCoupon");
 
     const screenData = [
         { icon: require('../Image/icon_home.png'), title: 'Trang chủ', data: "PageHome" },
@@ -32,8 +32,7 @@ export default function PageMain() {
     ]
 
     return (
-        <div style={{ display: 'flex', width: '100%' }}>
-
+        <div style={{ display: 'flex', backgroundColor: '#141414' }}>
             {/* navigation */}
             <div className={styles.container_navigation}>
                 <div className={styles.container_logo}>
@@ -62,7 +61,7 @@ export default function PageMain() {
                     {buttonTab ?
                         (<div className={styles.list_navigation}>
                             <div className={styles.container_logo}>
-                                <RxHamburgerMenu style={{ color: 'white', fontSize: 20 }} onClick={() => setButtonTab(!buttonTab)}/>
+                                <RxHamburgerMenu style={{ color: 'white', fontSize: 20 }} onClick={() => setButtonTab(!buttonTab)} />
                                 <img src={require('../Image/logo_app.png')} className={styles.image_logo} alt="" />
                                 <p className={styles.text_logo}>Order<span style={{ color: 'white' }}>Food</span></p>
                             </div>
@@ -72,9 +71,12 @@ export default function PageMain() {
                             ))}
                         </div>)
                         :
-                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                            <RxHamburgerMenu style={{ color: 'black', fontSize: 20 }} onClick={() => setButtonTab(!buttonTab)}/>
-                            <img src={require('../Image/icon_profile.png')} alt="" className={styles.img_header} />
+                        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', paddingTop: 10 }}>
+                            <RxHamburgerMenu style={{ color: 'black', fontSize: 20 }} onClick={() => setButtonTab(!buttonTab)} />
+                            <div style={{display: 'flex', alignItems: 'center'}}>
+                                <p style={{marginBottom: 0, marginRight: 5}}>Minh Minh</p>
+                                <img src={require('../Image/icon_profile.png')} alt="" className={styles.img_header} />
+                            </div>
                         </div>}
                 </div>
 
