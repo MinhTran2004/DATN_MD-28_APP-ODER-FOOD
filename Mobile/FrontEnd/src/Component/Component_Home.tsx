@@ -34,7 +34,7 @@ export default class ComponentHome {
     static ProductHozirontal = ({ product, categories, navigation }: { product: Product, categories: Category[], navigation: any }) => {
         const [favourite, setFavourite] = useState(false);
         return (
-            <TouchableOpacity style={styles.container_product_hozizontal} onPress={() => navigation.navigate('InforProduct')}>
+            <TouchableOpacity style={styles.container_product_hozizontal} onPress={() => navigation.navigate('InforProduct', { product })}>
                 <Image source={{ uri: product.image }} style={styles.image_product_hozizontal} />
                 <Text numberOfLines={1} style={styles.name_product_hozizontal}>{product.name}</Text>
                 <Text>{categories.find((category) => category._id === product.idCategory).name}</Text>
@@ -67,7 +67,7 @@ export default class ComponentHome {
         const [favourite, setFavourite] = useState(false);
 
         return (
-            <TouchableOpacity style={styles.container_product_vertical} onPress={() => navigation.navigate('InforProduct')}>
+            <TouchableOpacity style={styles.container_product_vertical} onPress={() => navigation.navigate('InforProduct', { product })}>
                 <Image source={{ uri: product.image }} style={styles.image_product_vertical} />
                 <View style={{ width: '100%', marginLeft: 10, justifyContent: 'space-between' }}>
                     <View>
