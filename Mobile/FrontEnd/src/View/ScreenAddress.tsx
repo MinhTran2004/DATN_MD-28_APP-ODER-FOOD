@@ -1,8 +1,8 @@
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import Feather from 'react-native-vector-icons/Feather';
-import styles from "../css/CSSCart";
-import ComponentAddress from "../component/Component_Address";
-import Component_Profile from "../component/Component_Profile";
+import styles from "../CSS/CSSCart";
+import ComponentAddress from "../Component/Component_Address";
+import Component_Profile from "../Component/Component_Profile";
 
 export default function ScreenAddress({ navigation }: any) {
     return (

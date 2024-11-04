@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View, Animated, Modal } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { Product } from '../model/Model_Product';
-import { ViewModelCart } from '../viewmodel/VM_Cart';
+import { Product } from '../Model/Model_Product';
+import { ViewModelCart } from '../ViewModel/VM_Cart';
 import { Swipeable } from 'react-native-gesture-handler';
 import { useState } from 'react';
 import { deleteProduct } from '../redux/slice/cartSlice';

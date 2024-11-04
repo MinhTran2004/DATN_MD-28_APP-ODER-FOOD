@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {Cart} from '../../model/Model_Cart';
-import {Product} from '../../model/Model_Product';
+import {Cart} from '../../Model/Model_Cart';
+import {Product} from '../../Model/Model_Product';
 
 export enum MUTATE_TYPE {
   'delete',

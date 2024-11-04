@@ -1,6 +1,6 @@
 import axios from 'axios';
-import {IAxiosPaginatedRespose} from '../network/IAxiosPaginatedResponse';
-import {Category} from '../model/Model_Category';
+import {IAxiosPaginatedRespose} from '../Network/IAxiosPaginatedResponse';
+import {Category} from '../Model/Model_Category';
 
 class ServiceCategory {
   static url = 'http://192.168.88.137:5000/category';

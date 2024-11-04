@@ -1,10 +1,10 @@
 import { Modal, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
-import styles from '../css/CSSCart';
-import ComponentCart from '../component/Component_Cart';
-import { ViewModelAccount } from '../viewmodel/VM_Account';
+import styles from '../CSS/CSSCart';
+import ComponentCart from '../Component/Component_Cart';
+import { ViewModelAccount } from '../ViewModel/VM_Account';
 import { useAppDispatch, useAppSelector } from '../hooks/hooks';
-import { ViewModelCart } from '../viewmodel/VM_Cart';
+import { ViewModelCart } from '../ViewModel/VM_Cart';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { useEffect, useState } from 'react';
 import { removeMessage } from '../redux/slice/cartSlice';

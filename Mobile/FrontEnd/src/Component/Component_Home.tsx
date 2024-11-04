@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { Product } from '../model/Model_Product';
-import { Category } from '../model/Model_Category';
-import { ViewModelCart } from '../viewmodel/VM_Cart';
+import { Product } from '../Model/Model_Product';
+import { Category } from '../Model/Model_Category';
+import { ViewModelCart } from '../ViewModel/VM_Cart';
 
 export default class ComponentHome {
     static Input_Screach = ({ input, event }: any) => {

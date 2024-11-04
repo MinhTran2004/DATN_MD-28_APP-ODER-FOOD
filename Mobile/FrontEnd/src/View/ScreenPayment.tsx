@@ -2,8 +2,8 @@ import { Image, ScrollView, TouchableOpacity, View } from "react-native";
 import { Text } from "react-native-paper";
 import Feather from "react-native-vector-icons/Feather";
 import AntDesign from "react-native-vector-icons/AntDesign";
-import styles from "../css/CSSPayment";
-import ComponentPayment from "../component/Component_Payment";
+import styles from "../CSS/CSSPayment";
+import ComponentPayment from "../Component/Component_Payment";
 
 export default function ScreenPayment({ navigation }: any) {
     return (

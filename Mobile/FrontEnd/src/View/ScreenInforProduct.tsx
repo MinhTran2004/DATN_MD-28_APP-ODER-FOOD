@@ -1,11 +1,11 @@
 import { Image, Modal, TouchableOpacity, View } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
-import styles from '../css/CSSInforProduct';
+import styles from '../CSS/CSSInforProduct';
 import { Text } from 'react-native-paper';
 import { useState } from 'react';
-import { Product } from '../model/Model_Product';
-import { ViewModelCart } from '../viewmodel/VM_Cart';
-import { ViewModelAccount } from '../viewmodel/VM_Account';
+import { Product } from '../Model/Model_Product';
+import { ViewModelCart } from '../ViewModel/VM_Cart';
+import { ViewModelAccount } from '../ViewModel/VM_Account';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 export default function ScreenInforProduct({ navigation, route }: { navigation: any, route: any }) {

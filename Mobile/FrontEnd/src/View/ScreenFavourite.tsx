@@ -1,7 +1,7 @@
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import ComponentHome from "../component/Component_Home";
+import ComponentHome from "../Component/Component_Home";
 import Feather from 'react-native-vector-icons/Feather';
-import styles from "../css/CSSCart";
+import styles from "../CSS/CSSCart";
 
 export default function ScreenFavourite({ navigation }: any) {
     return (

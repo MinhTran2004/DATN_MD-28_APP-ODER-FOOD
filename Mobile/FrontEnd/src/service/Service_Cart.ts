@@ -1,6 +1,6 @@
 import axios from 'axios';
-import {Cart} from '../model/Model_Cart';
-import {IAxiosPatchRespose} from '../network/IAxiosPatchResponse';
+import {Cart} from '../Model/Model_Cart';
+import {IAxiosPatchRespose} from '../Network/IAxiosPatchResponse';
 
 class ServiceProduct {
   static url = 'http://192.168.88.137:5000/cart/user';

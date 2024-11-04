@@ -1,7 +1,7 @@
 import {useCallback, useEffect} from 'react';
-import Model_Cart from '../model/Model_Cart';
+import Model_Cart from '../Model/Model_Cart';
 import ServiceCart from '../service/Service_Cart'; // Assuming a cart service exists
-import {Product} from '../model/Model_Product';
+import {Product} from '../Model/Model_Product';
 import {
   set,
   addProduct,

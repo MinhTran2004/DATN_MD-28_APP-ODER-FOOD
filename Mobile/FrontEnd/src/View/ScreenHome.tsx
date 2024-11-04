@@ -1,10 +1,10 @@
 import { ActivityIndicator, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import styles from '../css/CSSHome';
-import ComponentHome from '../component/Component_Home';
+import styles from '../CSS/CSSHome';
+import ComponentHome from '../Component/Component_Home';
 import { useEffect, useState } from 'react';
 import ServiceCategory from '../service/Service_Category';
-import { Category } from '../model/Model_Category';
-import { Product } from '../model/Model_Product';
+import { Category } from '../Model/Model_Category';
+import { Product } from '../Model/Model_Product';
 import ServiceProduct from '../service/Service_Product';
 
 export default function ScreenHome({ navigation }: any) {

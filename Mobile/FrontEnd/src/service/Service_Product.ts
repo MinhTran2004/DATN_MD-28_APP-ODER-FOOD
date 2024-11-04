@@ -1,6 +1,6 @@
 import axios from 'axios';
-import {IAxiosPaginatedRespose} from '../network/IAxiosPaginatedResponse';
-import {Product} from '../model/Model_Product';
+import {IAxiosPaginatedRespose} from '../Network/IAxiosPaginatedResponse';
+import {Product} from '../Model/Model_Product';
 
 class ServiceProduct {
   static url = 'http://192.168.88.137:5000/product';

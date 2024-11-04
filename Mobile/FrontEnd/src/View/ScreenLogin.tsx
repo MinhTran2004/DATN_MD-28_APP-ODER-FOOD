@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Image, Text, TouchableOpacity, View, Alert } from "react-native";
-import styles from "../css/CSSLoginHome.js";
-import ComponentLogin from "../component/Component_Login.tsx";
+import styles from "../CSS/CSSLoginHome.js";
+import ComponentLogin from "../Component/Component_Login.tsx";
 import CheckBox from "@react-native-community/checkbox";
-import { ViewModelAccount } from "../viewmodel/VM_Account.ts";
+import { ViewModelAccount } from "../ViewModel/VM_Account.ts";
 
 export default function ScreenLogin({ navigation }: any) {
     const ViewModel = ViewModelAccount(navigation);

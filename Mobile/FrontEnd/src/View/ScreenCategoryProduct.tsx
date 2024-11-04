@@ -1,7 +1,7 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
-import styles from "../css/CSSPayment";
-import Component_Home from "../component/Component_Home";
+import styles from "../CSS/CSSPayment";
+import Component_Home from "../Component/Component_Home";
 
 export default function ScreenCategoryProduct({ navigation }: any) {
     return (
