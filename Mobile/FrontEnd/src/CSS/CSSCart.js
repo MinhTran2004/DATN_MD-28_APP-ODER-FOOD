@@ -40,9 +40,26 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 20,
         textAlign: 'center'
-    }
-
-
+    },
+    modalOverlay: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+    },
+    dialogContainer: {
+        width: 250,
+        padding: 20,
+        backgroundColor: 'white',
+        borderRadius: 10,
+        alignItems: 'center',
+    },
+    dialogMessage: {
+        fontSize: 16,
+        color: 'black',
+        marginTop: 10,
+        textAlign: 'center',
+    },
 })
 
 export default styles;

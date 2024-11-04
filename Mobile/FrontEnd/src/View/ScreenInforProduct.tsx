@@ -1,12 +1,18 @@
-import { Image, TouchableOpacity, View } from 'react-native';
+import { Image, Modal, TouchableOpacity, View } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import styles from '../css/CSSInforProduct';
 import { Text } from 'react-native-paper';
 import { useState } from 'react';
 import { Product } from '../model/Model_Product';
+import { ViewModelCart } from '../viewmodel/VM_Cart';
+import { ViewModelAccount } from '../viewmodel/VM_Account';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 export default function ScreenInforProduct({ navigation, route }: { navigation: any, route: any }) {
+    const [isDialogVisible, setDialogVisible] = useState(false); // State cho Dialog
     const { product } = route.params as { product: Product };
+    const cartViewModel = ViewModelCart(navigation);
+    const { id } = ViewModelAccount(navigation);
     //TODO: Save Favourite to DB
     const [favourite, setFavourite] = useState(false);
     return (
@@ -21,7 +27,7 @@ export default function ScreenInforProduct({ navigation, route }: { navigation: 
                 <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between' }}>
                     <View>
                         <Text style={styles.name_product}>{product.name}</Text>
-                        <Text style={styles.price_product}>{product.price}</Text>
+                        <Text style={styles.price_product}>${product.price}</Text>
                     </View>
                     <TouchableOpacity onPress={() => setFavourite(!favourite)}>
                         {favourite ?
@@ -40,13 +46,35 @@ export default function ScreenInforProduct({ navigation, route }: { navigation: 
                 <TouchableOpacity style={styles.btn_messenger}>
                     <Image source={require('../Image/icon_messenger.png')} style={{ width: 30, height: 30 }} />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.btn_cart}>
+                <TouchableOpacity style={styles.btn_cart} onPress={() => {
+                    // mock id because account login not completed
+                    cartViewModel.addProductToCart(id === '' ? undefined : id, product, 1);
+                    setDialogVisible(true);
+                    setTimeout(()=> {setDialogVisible(false);}, 2000);
+                }}>
                     <Image source={require('../Image/cart.png')} style={{ width: 35, height: 35 }} />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_sell}>
                     <Text style={{ fontSize: 20, color: 'white' }}>Mua ngay</Text>
                 </TouchableOpacity>
             </View>
+            <Modal
+                transparent={true}
+                visible={isDialogVisible}
+                animationType="fade"
+            >
+                <View style={styles.modalOverlay}>
+                    <View style={styles.dialogContainer}>
+                        <MaterialIcons name="check-circle" size={50} color="green" />
+                        {/* Hiển thị nội dung thông báo theo từng trường hợp */}
+                        <Text style={styles.dialogMessage}>
+                            {'Sản phẩm đã được thêm vào giỏ hàng!'}
+                        </Text>
+                    </View>
+                </View>
+            </Modal>
         </View>
+
+
     );
 }

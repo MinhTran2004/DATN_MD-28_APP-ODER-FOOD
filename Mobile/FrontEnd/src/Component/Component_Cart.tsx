@@ -1,13 +1,26 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View, Animated } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View, Animated, Modal } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { Product } from '../model/Model_Product';
 import { ViewModelCart } from '../viewmodel/VM_Cart';
 import { Swipeable } from 'react-native-gesture-handler';
+import { useState } from 'react';
+import { deleteProduct } from '../redux/slice/cartSlice';
+import { useAppDispatch } from '../hooks/hooks';
 
 export default class Component_cart {
     static CartVertical = ({ product, quantity, navigation }: { product: Product, quantity: number, navigation: any }) => {
         const { addProductToCart, removeProductFromCart } = ViewModelCart(navigation);
-        const deleteProductFromCart = () => { };
+        const [isDialogVisible, setDialogVisible] = useState(false); // State cho Dialog
+        const dispatch = useAppDispatch();
+        const rejectAction = () => {
+            setDialogVisible(false);
+        };
+
+        const acceptAction = () => {
+            dispatch(deleteProduct(product));
+            setDialogVisible(false);
+        };
+
 
         const renderRightActions = (progress, dragX) => {
             const scale = dragX.interpolate({
@@ -17,7 +30,7 @@ export default class Component_cart {
             });
 
             return (
-                <TouchableOpacity onPress={() => deleteProductFromCart(product)} style={styles.deleteButton}>
+                <TouchableOpacity onPress={() => setDialogVisible(true)} style={styles.deleteButton}>
                     <Animated.Image source={require('../Image/delete.png')} />
                 </TouchableOpacity>
             );
@@ -47,6 +60,32 @@ export default class Component_cart {
                         </View>
                     </View>
                 </View>
+
+                {/* Dialog Xác nhận */}
+                <Modal
+                    transparent={true}
+                    visible={isDialogVisible}
+                    animationType="fade"
+                >
+                    <View style={styles.modalOverlay}>
+                        <View style={styles.dialogContainer}>
+                            {/* Hiển thị nội dung thông báo theo từng trường hợp */}
+                            <Text style={styles.dialogMessage}>
+                                {'Bạn có chắc chắn muốn xóa sản phẩm này?'}
+                            </Text>
+                            <View style={styles.buttonContainer}>
+                                <TouchableOpacity style={styles.buttonAccept} onPress={acceptAction}>
+                                    <Text style={styles.buttonAcceptText}>Yes</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={styles.buttonReject} onPress={rejectAction}>
+                                    <Text>No</Text>
+                                </TouchableOpacity>
+
+                            </View>
+                        </View>
+
+                    </View>
+                </Modal>
             </Swipeable>
         );
     };
@@ -102,11 +141,69 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: 80,
         borderRadius: 10,
-        height: 90,
+        marginRight: 10,
+        marginTop: 10,
     },
     deleteText: {
         color: 'white',
         fontWeight: 'bold',
         fontSize: 16,
+    },
+    modalOverlay: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+    },
+    dialogContainer: {
+        width: 250,
+        padding: 10,
+        backgroundColor: 'white',
+        borderRadius: 10,
+        alignItems: 'center',
+    },
+    dialogMessage: {
+        fontSize: 16,
+        color: 'black',
+        marginTop: 10,
+        textAlign: 'center',
+    },
+    buttonContainer: {
+        marginTop: 5,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%',
+    },
+    buttonAccept: {
+        backgroundColor: '#FFFFFF',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: '#4AB1FB',
+        width: '45%',/* Rectangle 64 */
+        borderRadius: 10,
+        borderColor: '#4AB1FB',
+        borderWidth: 1,
+
+    },
+    buttonReject: {
+        backgroundColor: '#4AB1FB',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '45%',
+        borderRadius: 10,
+        borderColor: '#4AB1FB',
+        borderWidth: 1,
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    buttonAcceptText: {
+        color: '#4AB1FB',
     },
 });
