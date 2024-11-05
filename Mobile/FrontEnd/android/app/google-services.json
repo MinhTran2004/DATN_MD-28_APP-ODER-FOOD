@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "239497999416",
+    "project_id": "datn-md28",
+    "storage_bucket": "datn-md28.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239497999416:android:fe08bd7ad6151b91cb22cd",
+        "android_client_info": {
+          "package_name": "com.frontend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_8Xt1CxdTu1RGL7fOzyWc0pvk1AxuKsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
