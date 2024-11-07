@@ -10,14 +10,13 @@ const styles = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
-        paddingVertical: 10,
-        paddingHorizontal: 5
+        paddingVertical: 15
     },
     text_title: {
-        fontSize: 25,
-        color: 'black',
-        fontWeight: 'bold',
-        marginLeft: 5,
+       fontSize: 20,
+       color: '#000',
+       paddingHorizontal: 10,
+       fontWeight: 'bold'
     },
 
     // footer

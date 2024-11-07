@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     name_profile:{
         color: 'black',
         fontSize: 20,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginVertical: 5
     }
 });
 

@@ -1,32 +1,33 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Image, LogBox, TouchableOpacity, View } from "react-native";
-import ScreenLogin from "./src/view/ScreenLogin";
+import ScreenLogin from "./src/View/ScreenLogin";
 import { NavigationContainer } from "@react-navigation/native";
-import ScreenRegister from "./src/view/ScreenRegister";
-import ScreenHome from "./src/view/ScreenHome";
-import ScreenCart from "./src/view/ScreenCart";
-import ScreenAccount from "./src/view/ScreenAccount";
+import ScreenRegister from "./src/View/ScreenRegister";
+import ScreenHome from "./src/View/ScreenHome";
+import ScreenCart from "./src/View/ScreenCart";
+import ScreenAccount from "./src/View/ScreenAccount";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import ScreenProfile from "./src/view/ScreenProfile";
-import ScreenNotification from "./src/view/ScreenNotification";
-import ScreenMessenger from "./src/view/ScreenMessenger";
+import ScreenProfile from "./src/View/ScreenProfile";
+import ScreenNotification from "./src/View/ScreenNotification";
+import ScreenMessenger from "./src/View/ScreenMessenger";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import ScreenOrderWaiting from "./src/view/ScreenOrderWaiting";
-import ScreenOrderCompleted from "./src/view/ScreenOrderCompleted";
-import ScreenOrderCancelled from "./src/view/ScreenOrderCancelled";
-import ScreenPayment from "./src/view/ScreenPayment";
-import ScreenCategoryProduct from "./src/view/ScreenCategoryProduct";
-import ScreenInforProduct from "./src/view/ScreenInforProduct";
-import ScreenFavourite from "./src/view/ScreenFavourite";
-import ScreenAddress from "./src/view/ScreenAddress";
-import ScreenEditAddress from "./src/view/ScreenEditAddress";
+import ScreenOrderWaiting from "./src/View/ScreenOrderWaiting";
+import ScreenOrderCompleted from "./src/View/ScreenOrderCompleted";
+import ScreenOrderCancelled from "./src/View/ScreenOrderCancelled";
+import ScreenPayment from "./src/View/ScreenPayment";
+import ScreenCategoryProduct from "./src/View/ScreenCategoryProduct";
+import ScreenInforProduct from "./src/View/ScreenInforProduct";
+import ScreenFavourite from "./src/View/ScreenFavourite";
+import ScreenAddress from "./src/View/ScreenAddress";
+import ScreenEditAddress from "./src/View/ScreenEditAddress";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import ScreenStoreRegistrantion from "./src/view/ScreenStoreRegistrantion";
-import ScreenMessengerDetail from "./src/view/ScreenMessengerDetail";
-import ScreenSearch from "./src/view/ScreenSearch";
-import ScreenInForOder from "./src/view/ScreenInForOder";
+import ScreenStoreRegistrantion from "./src/View/ScreenStoreRegistrantion";
+import ScreenMessengerDetail from "./src/View/ScreenMessengerDetail";
+import ScreenSearch from "./src/View/ScreenSearch";
+import ScreenInForOder from "./src/View/ScreenInForOder";
 import { Provider } from "react-redux";
 import store from "./src/redux/store";
+import ScreenDiscount from "./src/View/ScreenDiscount";
 
 LogBox.ignoreLogs(['Warning: A props object containing a "key" prop is being spread into JSX']);
 
@@ -55,6 +56,7 @@ export default function App() {
             <Stack.Screen name="OrderCancelled" component={ScreenOrderCancelled} />
             <Stack.Screen name="OrderCompleted" component={ScreenOrderCompleted} />
             <Stack.Screen name="Account" component={ScreenAccount} />
+            <Stack.Screen name="Discount" component={ScreenDiscount} />
           </Stack.Navigator>
         </NavigationContainer>
       </GestureHandlerRootView>

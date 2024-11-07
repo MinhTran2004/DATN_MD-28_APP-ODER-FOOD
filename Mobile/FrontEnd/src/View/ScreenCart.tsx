@@ -1,7 +1,7 @@
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
-import styles from "../css/CSSCart";
-import ComponentCart from "../component/Component_Cart";
+import styles from "../CSS/CSSCart";
+import ComponentCart from "../Component/Component_Cart";
 
 export default function ScreenCart({ navigation }: any) {
     return (
@@ -11,7 +11,7 @@ export default function ScreenCart({ navigation }: any) {
                 {/* header */}
                 <View style={styles.container_header}>
                     <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-                        <Feather name="arrow-left" style={{fontSize: 30}} />
+                    <Feather name="arrow-left" style={{ fontSize: 24, color: '#000' }} />
                     </TouchableOpacity>
                     <Text style={styles.text_title}>Giỏ hàng</Text>
                 </View>

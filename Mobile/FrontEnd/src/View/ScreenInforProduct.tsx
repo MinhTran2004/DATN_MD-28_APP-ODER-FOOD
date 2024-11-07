@@ -1,6 +1,6 @@
 import { Image, TouchableOpacity, View } from "react-native";
 import Feather from "react-native-vector-icons/Feather"
-import styles from "../css/CSSInforProduct";
+import styles from "../CSS/CSSInforProduct";
 import { Text } from "react-native-paper";
 import { useState } from "react";
 

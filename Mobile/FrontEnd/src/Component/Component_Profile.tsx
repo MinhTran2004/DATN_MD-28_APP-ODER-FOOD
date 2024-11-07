@@ -10,10 +10,10 @@ export default class Component_Profile {
             <TouchableOpacity onPress={() => navigation.navigate(screen, { isEdit })}>
                 <View style={styles.container_item_profile}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Image source={icon} style={{ width: 20, height: 20 }} />
-                        <Text style={{ fontSize: 20, marginLeft: 10 }}>{name}</Text>
+                        <Image source={icon} style={{ width: 22, height: 22 }} />
+                        <Text style={{ fontSize: 18, marginLeft: 10 }}>{name}</Text>
                     </View>
-                    <AntDesign name="right" style={{ fontSize: 20, color: '#22af51' }} />
+                    <AntDesign name="right" style={{ fontSize: 18, color: '#000' }} />
                 </View>
             </TouchableOpacity>
         );
@@ -26,9 +26,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        backgroundColor: '#f5f5f5',
-        marginBottom: 10,
-        padding: 10,
-        borderRadius: 15
+        backgroundColor: '#fff',
+        padding: 18,
+        // borderTopWidth: 0.5,
+        // borderBottomWidth: 0.5,
+        // borderColor: '#ddd'
     }
 });

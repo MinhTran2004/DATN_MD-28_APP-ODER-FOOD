@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import ComponentLogin from "../component/Component_Login";
-import { ViewModelAccount } from "../viewmodel/VM_Account";
+import ComponentLogin from "../Component/Component_Login";
+import { ViewModelAccount } from "../ViewModel/VM_Account";
 
 export default function ScreenRegister({ navigation }: any) {
     const viewModel = ViewModelAccount();

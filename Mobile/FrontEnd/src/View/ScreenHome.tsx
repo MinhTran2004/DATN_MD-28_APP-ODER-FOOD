@@ -1,6 +1,6 @@
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import styles from "../css/CSSHome";
-import ComponentHome from "../component/Component_Home";
+import styles from "../CSS/CSSHome";
+import ComponentHome from "../Component/Component_Home";
 import { useState } from "react";
 
 export default function ScreenHome({ navigation }: any) {

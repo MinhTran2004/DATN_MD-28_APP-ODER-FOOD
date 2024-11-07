@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Image, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
-import ComponentHome from '../component/Component_Home';
+import ComponentHome from '../Component/Component_Home';
 
 //Dữ liệu test
 const products = [

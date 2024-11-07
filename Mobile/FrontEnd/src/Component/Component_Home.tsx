@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, ImageBackground } from "react-native";
 
 export default class ComponentHome {
     static Input_Screach = ({ input, event }: any) => {
@@ -82,6 +82,33 @@ export default class ComponentHome {
                             }
                         </TouchableOpacity>
                     </View>
+                </View>
+            </TouchableOpacity>
+        )
+    }
+
+    static ProductFavourite = ({ navigation }: any) => {
+
+
+        return (
+            <TouchableOpacity style={styles.container_product_favourite} onPress={() => navigation.navigate("InforProduct")}>
+                <ImageBackground source={require("../Image/image_product_demo.png")} borderTopLeftRadius={20} borderTopRightRadius={20} style={styles.image_product_favourite}>
+                    <TouchableOpacity style={styles.ic_heart}>
+                        <Image source={require('../Image/icon_showFavourite.png')} style={{ width: 20, height: 20 }} />
+                    </TouchableOpacity>
+                    <View style={{ paddingHorizontal: 20, paddingVertical: 10, alignSelf: 'flex-start', backgroundColor: '#262B33', width: '100%', borderTopLeftRadius: 20, borderTopRightRadius: 20 }}>
+                        <Text style={styles.name_product_favourite}>Vegetarian Noodles</Text>
+                        <Text style={{ color: '#eee', fontSize: 16, fontWeight: '500' }}>Hambuger</Text>
+                    </View>
+                </ImageBackground>
+                <View style={{ padding: 20 }}>
+                    <Text style={{ fontSize: 18, fontWeight: '700', color: '#000', }}>Decription</Text>
+                    <Text style={{ fontSize: 16, color: '#000', paddingVertical: 5 }} numberOfLines={4}>
+                        Day la mon an ngon so 1 the gioi blabla blabla blabla blabla blabla blabla
+                        blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla
+                        blabla blabla blabla blabla blabla blabla blabla
+                    </Text>
+                    <Text style={styles.price_product_favourite}>$23.000</Text>
                 </View>
             </TouchableOpacity>
         )
@@ -197,5 +224,42 @@ const styles = StyleSheet.create({
         color: '#42bb6a',
         fontWeight: 'bold',
         marginTop: 5
+    },
+
+    //ProductFavourite
+    container_product_favourite: {
+        flex: 1,
+        width: '100%',
+        backgroundColor: '#e9e9e9',
+        borderRadius: 20,
+        marginBottom: 30
+    },
+    ic_heart: {
+        width: 35,
+        height: 35,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#262B33',
+        borderRadius: 10,
+        top: 15,
+        right: 15
+    },
+    image_product_favourite: {
+        width: '100%',
+        height: 300,
+        alignItems: 'flex-end',
+        justifyContent: 'space-between'
+    },   
+    name_product_favourite: {
+        fontSize: 20,
+        fontWeight: '700',
+        color: '#fff'
+    },
+    price_product_favourite: {
+        color: '#DB920B',
+        paddingTop: 5,
+        fontSize: 20,
+        fontWeight: '700'
     }
+
 })

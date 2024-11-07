@@ -1,6 +1,6 @@
 import { StyleSheet, Switch, Text, TextInput, TouchableOpacity, View, Alert, Modal } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
-import ComponentEditAddress from "../component/Component_EditAddress";
+import Component_EditAddress from "../Component/Component_EditAddress";
 import { useState } from "react";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons"; // Thêm thư viện này để dùng icon
 
@@ -34,9 +34,9 @@ export default function ScreenEditAddress({ navigation, route }: any) {
 
             <Text style={styles.text_title}>Địa chỉ</Text>
             {/* Select City */}
-            <ComponentEditAddress.SelectAddress name={"Chọn thành phố"} />
-            <ComponentEditAddress.SelectAddress name={"Chọn quận"} />
-            <ComponentEditAddress.SelectAddress name={"Chọn phường"} />
+            <Component_EditAddress.SelectAddress name={"Chọn thành phố"} />
+            <Component_EditAddress.SelectAddress name={"Chọn quận"} />
+            <Component_EditAddress.SelectAddress name={"Chọn phường"} />
             <TextInput style={[styles.inputTextContact, { marginTop: 0 }]} placeholder="Nhập địa chỉ cụ thể" />
 
             {/* mặc định */}
