@@ -1,13 +1,13 @@
-import { combineReducers, configureStore, createStore, ReducerType } from '@reduxjs/toolkit';
+import { applyMiddleware, combineReducers, configureStore, createStore, ReducerType } from '@reduxjs/toolkit';
 import { accountReducer } from './reducer/reducer';
-import cartSlice from './slice/cartSlice';
+import { thunk } from 'redux-thunk';
+import wishlistSlice  from './slice/wishlistSlice';
 
 const rootReducer = combineReducers({
     account: accountReducer,
-    cart: cartSlice,
+    wishlist: wishlistSlice,
 });
-
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
 
@@ -15,3 +15,4 @@ export default store;
 export type RootState = ReturnType<typeof store.getState>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch
+

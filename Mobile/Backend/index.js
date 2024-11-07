@@ -6,8 +6,7 @@ const accountRoute = require('./routers/Router_Account');
 const addressRoute = require('./routers/Router_Address');
 const productRoute = require('./routers/Router_Product');
 const categoryRoute = require('./routers/Router_Category');
-const cartRoute = require('./routers/Router_Cart');
-
+const wishlistRoute = require('./routers/Router_Wishlist');
 const app = express();
 const port = 5000;
 
@@ -20,7 +19,7 @@ app.use('/account', accountRoute);
 app.use('/address', addressRoute);
 app.use('/product', productRoute);
 app.use('/category', categoryRoute);
-app.use('/cart', cartRoute);
+app.use('/wishlist', wishlistRoute);
 
 
 app.listen(port, () => {

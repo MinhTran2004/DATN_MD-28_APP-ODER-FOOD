@@ -2,7 +2,7 @@ import axios from 'axios';
 import Model_Account from '../Model/Model_Account';
 
 class SeviceAccount {
-    static url = "http://192.168.5.22:5000/account";
+    static url = "http://10.1.45.138:5000/account";
 
     static createAccount = async (data:Model_Account) => {
         try{

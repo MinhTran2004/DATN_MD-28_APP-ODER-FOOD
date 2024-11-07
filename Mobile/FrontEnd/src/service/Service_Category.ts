@@ -3,7 +3,7 @@ import {IAxiosPaginatedRespose} from '../Network/IAxiosPaginatedResponse';
 import {Category} from '../Model/Model_Category';
 
 class ServiceCategory {
-  static url = 'http://192.168.88.137:5000/category';
+  static url = 'http://10.1.45.138:5000/category';
 
   static async getAll() {
     try {

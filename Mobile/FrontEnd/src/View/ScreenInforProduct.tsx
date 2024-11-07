@@ -4,15 +4,13 @@ import styles from '../CSS/CSSInforProduct';
 import { Text } from 'react-native-paper';
 import { useState } from 'react';
 import { Product } from '../Model/Model_Product';
-import { ViewModelCart } from '../ViewModel/VM_Cart';
-import { ViewModelAccount } from '../ViewModel/VM_Account';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { ViewModelWishlist } from '../ViewModel/VM_Wishlist';
 
 export default function ScreenInforProduct({ navigation, route }: { navigation: any, route: any }) {
     const [isDialogVisible, setDialogVisible] = useState(false); // State cho Dialog
     const { product } = route.params as { product: Product };
-    const cartViewModel = ViewModelCart(navigation);
-    const { id } = ViewModelAccount(navigation);
+    const {addProductToWishlist} = ViewModelWishlist(navigation);
     //TODO: Save Favourite to DB
     const [favourite, setFavourite] = useState(false);
     return (
@@ -47,8 +45,7 @@ export default function ScreenInforProduct({ navigation, route }: { navigation: 
                     <Image source={require('../Image/icon_messenger.png')} style={{ width: 30, height: 30 }} />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_cart} onPress={() => {
-                    // mock id because account login not completed
-                    cartViewModel.addProductToCart(id === '' ? undefined : id, product, 1);
+                    addProductToWishlist(product, 1);
                     setDialogVisible(true);
                     setTimeout(()=> {setDialogVisible(false);}, 2000);
                 }}>

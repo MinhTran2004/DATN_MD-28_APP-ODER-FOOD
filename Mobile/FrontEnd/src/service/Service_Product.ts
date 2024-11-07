@@ -3,7 +3,7 @@ import {IAxiosPaginatedRespose} from '../Network/IAxiosPaginatedResponse';
 import {Product} from '../Model/Model_Product';
 
 class ServiceProduct {
-  static url = 'http://192.168.88.137:5000/product';
+  static url = 'http://10.1.45.138:5000/product';
 
   static async getSome({page = 0}: {page?: number}) {
     try {
