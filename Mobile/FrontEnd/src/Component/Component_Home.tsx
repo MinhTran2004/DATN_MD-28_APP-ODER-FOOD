@@ -37,7 +37,7 @@ export default class ComponentHome {
             <TouchableOpacity style={styles.container_product_hozizontal} onPress={() => navigation.navigate('InforProduct', { product })}>
                 <Image source={{ uri: product.image }} style={styles.image_product_hozizontal} />
                 <Text numberOfLines={1} style={styles.name_product_hozizontal}>{product.name}</Text>
-                <Text>{product.idCategory}</Text>
+                <Text numberOfLines={1} style={styles.category_product_hozizontal}>{categories.find((category) => category._id === product.idCategory)?.name}</Text>
                 <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between' }}>
                     <Text style={styles.price_product_hozizontal}>${product.price}</Text>
                     <TouchableOpacity onPress={() => setFavourite(!favourite)}>
@@ -71,7 +71,7 @@ export default class ComponentHome {
                 <View style={{ width: '100%', marginLeft: 10, justifyContent: 'space-between' }}>
                     <View>
                         <Text style={styles.name_product_vertical}>{product.name}</Text>
-                        <Text>{product.idCategory}</Text>
+                        <Text style={styles.category_product_hozizontal}>{categories.find((category) => category._id === product.idCategory)?.name}</Text>
                     </View>
                     <View style={{ width: '72%', flexDirection: 'row', justifyContent: 'space-between' }}>
                         <Text style={styles.price_product_vertical}>${product.price}</Text>
@@ -166,6 +166,12 @@ const styles = StyleSheet.create({
         fontSize: 17,
         color: 'black',
     },
+    category_product_hozizontal: {
+        fontWeight: '400',
+        fontSize: 16,
+        lineHeight: 22,
+        color: '#A6A1A1',
+    },
     price_product_hozizontal: {
         fontSize: 18,
         color: '#42bb6a',
@@ -192,6 +198,12 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 17,
         color: 'black',
+    },
+    category_product_vertical: {
+        fontWeight: '400',
+        fontSize: 16,
+        lineHeight: 22,
+        color: '#A6A1A1',
     },
     price_product_vertical: {
         fontSize: 18,

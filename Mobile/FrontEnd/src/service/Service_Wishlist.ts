@@ -3,7 +3,7 @@ import {Product} from '../Model/Model_Product';
 import {Model_WishlistItem} from '../Model/Model_Wishlist';
 
 class ServiceWishlistItem {
-  static url = 'http://10.1.45.138:5000/wishlist';
+  static url = 'http://192.168.88.225:5000/wishlist';
 
   static async get({userId}: {userId: string}) {
     try {
@@ -13,6 +13,7 @@ class ServiceWishlistItem {
 
       return response.data;
     } catch (e) {
+      console.log(e);
     }
   }
 
@@ -24,6 +25,7 @@ class ServiceWishlistItem {
         {timeout: 1000},
       );
     } catch (e) {
+      console.log(e);
     }
   }
 }

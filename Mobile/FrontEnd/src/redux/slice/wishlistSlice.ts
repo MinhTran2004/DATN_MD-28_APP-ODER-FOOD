@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {Product} from '../../Model/Model_Product';
 import {Model_Wishlist} from '../../Model/Model_Wishlist';
+import { RootState } from '../store';
 
 const initialState: {
   wishlist: Model_Wishlist | undefined;
@@ -28,8 +29,8 @@ export const asyncRemove = createAsyncThunk(
   'wishlist/delete',
   async ({product}: {product: Product}, {getState}) => {
     try {
-      const state = getState() as typeof initialState;
-      const new_wishlist = await state.wishlist.asyncRemoveItem(product);
+      const state = getState() as RootState;
+      const new_wishlist = await state.wishlist.wishlist.asyncRemoveItem(product);
       return new_wishlist;
     } catch (e) {
       console.log(e);

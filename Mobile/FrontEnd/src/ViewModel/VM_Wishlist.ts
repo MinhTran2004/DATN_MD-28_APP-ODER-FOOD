@@ -46,10 +46,14 @@ export const ViewModelWishlist = (_navigation: any) => {
 
   useEffect(() => {
     const initWishlist = async () => {
-      const userId = (
-        await SeviceAccount.getAccountByAccountAndPassword(account, password)
-      ).account._id;
-      dispatch(initializeWishlist({userId}));
+      try {
+        const userId = (
+          await SeviceAccount.getAccountByAccountAndPassword(account, password)
+        ).account._id;
+        dispatch(initializeWishlist({userId}));
+      } catch (e) {
+        console.log(e);
+      }
     };
 
     if (!wishlist) {

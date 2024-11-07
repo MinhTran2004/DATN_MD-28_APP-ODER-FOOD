@@ -1,5 +1,3 @@
-import {useAppDispatch} from '../hooks/hooks';
-import {setMessage} from '../redux/slice/wishlistSlice';
 import ServiceWishlistItem from '../service/Service_Wishlist';
 import {Product} from './Model_Product';
 
