@@ -1,79 +1,92 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-export default class Component_cart {
+export default class ComponentCart {
     static CartVertical = () => {
         return (
             <View style={styles.container_product_vertical}>
                 <Image source={require("../Image/image_product_demo.png")} style={styles.image_product_vertical} />
-                <View style={{ width: '77%', marginLeft: 10, justifyContent: 'space-between' }}>
-                    <View style={{ width: '80%' }}>
+                <View style={styles.product_info}>
+                    <View style={styles.product_name}>
                         <Text style={styles.name_product_vertical}>Vegetarian Noodles</Text>
-                        <Text>Hambuger</Text>
+                        <Text style={styles.subtext}>Hamburger</Text>
                     </View>
-                    <View style={{ width: '100%', flexDirection: 'row' }}>
-                        <Text style={styles.price_product_vertical}>$23.000</Text>
-
+                    <View style={styles.price_operation}>
+                        <Text style={styles.price_product_vertical}>$23.00</Text>
                         <View style={styles.container_operation}>
-                            <TouchableOpacity>
-                                <MaterialIcons name="add" style={styles.btn_operation} />
-                            </TouchableOpacity>
-                            <Text style={styles.text_quantity}>1</Text>
                             <TouchableOpacity>
                                 <MaterialIcons name="remove" style={styles.btn_operation} />
                             </TouchableOpacity>
+                            <Text style={styles.text_quantity}>1</Text>
+                            <TouchableOpacity>
+                                <MaterialIcons name="add" style={styles.btn_operation} />
+                            </TouchableOpacity>
                         </View>
-
                     </View>
                 </View>
             </View>
-        )
-    }
+        );
+    };
 }
 
 const styles = StyleSheet.create({
-    // CartVertical
     container_product_vertical: {
         width: '100%',
         backgroundColor: 'white',
         flexDirection: 'row',
         borderRadius: 10,
-        marginRight: 10,
         marginTop: 10,
         padding: 15,
+        alignItems: 'center',
     },
     image_product_vertical: {
-        width: '23%',
-        height: 90,
-        borderRadius: 10
+        width: 80,
+        height: 80,
+        borderRadius: 10,
+    },
+    product_info: {
+        flex: 1,
+        marginLeft: 10,
+        justifyContent: 'space-between',
+    },
+    product_name: {
+        width: '80%',
     },
     name_product_vertical: {
         fontWeight: 'bold',
         fontSize: 17,
-        color: 'black'
+        color: 'black',
+    },
+    subtext: {
+        fontSize: 14,
+        color: 'grey',
+    },
+    price_operation: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
     },
     price_product_vertical: {
-        width: 150,
         fontSize: 18,
         color: '#42bb6a',
         fontWeight: 'bold',
-        marginTop: 5
     },
     container_operation: {
         flexDirection: 'row',
         alignItems: 'center',
+        borderWidth: 1,
+        borderColor: '#ddd',
+        borderRadius: 20,
+        padding: 5,
     },
     btn_operation: {
         fontSize: 18,
         color: 'black',
-        textAlign: 'center',
-        backgroundColor: '#f1f1f1',
-        borderRadius: 20,
-        padding: 5
+        marginHorizontal: 8,
     },
     text_quantity: {
-        fontSize: 20,
+        fontSize: 16,
         color: 'black',
         marginHorizontal: 8,
-    }
-})
+    },
+});

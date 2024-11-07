@@ -55,6 +55,13 @@ export default function ScreenLogin({ navigation }: any) {
             }>
                 <Text style={styles.text_btn_login}>Đăng Nhập</Text>
             </TouchableOpacity>
+            <View style={{ flexDirection: 'row', marginTop: 70 }}>
+                <Text style={{ fontSize: 18 }}>Bạn đã có tài khoản? </Text>
+                <TouchableOpacity onPress={() => { navigation.navigate('Register') }}>
+                    <Text style={{ color: '#2eb55a', fontWeight: '500', fontSize: 18 }}> Đăng ký</Text>
+                </TouchableOpacity>
+            </View>
+            
 
             <View style={styles.container_line}>
                 <View style={styles.line} />
@@ -68,12 +75,7 @@ export default function ScreenLogin({ navigation }: any) {
                 <ComponentLogin.LoginWidthProviders image={require("../Image/github.png")} />
             </View>
 
-            <View style={{ flexDirection: 'row', marginTop: 70 }}>
-                <Text style={{ fontSize: 18 }}>Bạn đã có tài khoản? </Text>
-                <TouchableOpacity onPress={() => { navigation.navigate('Register') }}>
-                    <Text style={{ color: '#2eb55a', fontWeight: '500', fontSize: 18 }}> Đăng ký</Text>
-                </TouchableOpacity>
-            </View>
+          
         </View>
     );
 }

@@ -1,35 +1,40 @@
 import { useState } from "react";
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
-export default class ComponentHome {
-    static Input_Screach = ({ input, event }: any) => {
+const ComponentHome = {
+    Input_Screach: ({ input, event }: any) => {
         return (
             <View style={styles.container_sreach}>
                 <Image source={require("../Image/search.png")} style={styles.image_search} />
-                <TextInput placeholder="Nhập tên san phẩm cần tìm" value={input} onChangeText={(text) => event(text)} />
+                <TextInput 
+                    placeholder="Nhập tên sản phẩm cần tìm" 
+                    value={input} 
+                    onChangeText={event} 
+                    style={{ flex: 1 }}  // Thêm style cho TextInput
+                />
             </View>
-        )
-    }
+        );
+    },
 
-    static Text_Title = ({ text }: any) => {
+    Text_Title: ({ text }: any) => {
         return (
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 5 }}>
+            <View style={styles.text_title_container}>
                 <Text style={styles.text_title}>{text}</Text>
                 <Text style={[styles.text_title, { color: '#37c666' }]}>See All</Text>
             </View>
-        )
-    }
+        );
+    },
 
-    static SelectCategoryProductVertical = ({ navigation, icon, text }: any) => {
+    SelectCategoryProductVertical: ({ navigation, icon, text }: any) => {
         return (
             <TouchableOpacity onPress={() => navigation.navigate('CategoryProduct')} style={styles.container_select_vertical}>
                 <Image source={icon} style={styles.icon_select_vertical} />
                 <Text style={styles.text_select_vertical}>{text}</Text>
             </TouchableOpacity>
-        )
-    }
+        );
+    },
 
-    static ProductHozirontal = ({ navigation }: any) => {
+    ProductHozirontal: ({ navigation }: any) => {
         const [favourite, setFavourite] = useState(false);
         return (
             <TouchableOpacity style={styles.container_product_hozizontal} onPress={() => navigation.navigate("InforProduct")}>
@@ -39,18 +44,19 @@ export default class ComponentHome {
                 <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between' }}>
                     <Text style={styles.price_product_hozizontal}>$23.000</Text>
                     <TouchableOpacity onPress={() => setFavourite(!favourite)}>
-                        {favourite ?
-                            (<Image source={require('../Image/icon_showFavourite.png')} style={{ width: 20, height: 20 }} />)
-                            :
-                            (<Image source={require('../Image/icon_unFavourite.png')} style={{ width: 20, height: 20 }} />)
-                        }
+                        <Image 
+                            source={favourite 
+                                ? require('../Image/icon_showFavourite.png') 
+                                : require('../Image/icon_unFavourite.png')} 
+                            style={{ width: 20, height: 20 }} 
+                        />
                     </TouchableOpacity>
                 </View>
             </TouchableOpacity>
-        )
-    }
+        );
+    },
 
-    static SelectCategoryProuctHozizontal = ({ icon, text }: any) => {
+    SelectCategoryProuctHozizontal: ({ icon, text }: any) => {
         return (
             <TouchableOpacity>
                 <View style={styles.container_select_hozirontal}>
@@ -58,12 +64,11 @@ export default class ComponentHome {
                     <Text style={styles.text_select_hozirontal}>{text}</Text>
                 </View>
             </TouchableOpacity>
-        )
-    }
+        );
+    },
 
-    static ProductVertical = ({ navigation }: any) => {
+    ProductVertical: ({ navigation }: any) => {
         const [favourite, setFavourite] = useState(false);
-
         return (
             <TouchableOpacity style={styles.container_product_vertical} onPress={() => navigation.navigate("InforProduct")}>
                 <Image source={require("../Image/image_product_demo.png")} style={styles.image_product_vertical} />
@@ -75,19 +80,19 @@ export default class ComponentHome {
                     <View style={{ width: '72%', flexDirection: 'row', justifyContent: 'space-between' }}>
                         <Text style={styles.price_product_vertical}>$23.000</Text>
                         <TouchableOpacity onPress={() => setFavourite(!favourite)}>
-                            {favourite ?
-                                (<Image source={require('../Image/icon_showFavourite.png')} style={{ width: 20, height: 20 }} />)
-                                :
-                                (<Image source={require('../Image/icon_unFavourite.png')} style={{ width: 20, height: 20 }} />)
-                            }
+                            <Image 
+                                source={favourite 
+                                    ? require('../Image/icon_showFavourite.png') 
+                                    : require('../Image/icon_unFavourite.png')} 
+                                style={{ width: 20, height: 20 }} 
+                            />
                         </TouchableOpacity>
                     </View>
                 </View>
             </TouchableOpacity>
-        )
+        );
     }
-
-}
+};
 
 const styles = StyleSheet.create({
     // Input_Screach
@@ -105,6 +110,11 @@ const styles = StyleSheet.create({
     },
 
     // Text_Title
+    text_title_container: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginVertical: 5,
+    },
     text_title: {
         marginVertical: 10,
         fontSize: 18,
@@ -157,7 +167,6 @@ const styles = StyleSheet.create({
     image_product_hozizontal: {
         width: 140,
         height: 140,
-        alignItems: 'center',
         borderRadius: 10
     },
     name_product_hozizontal: {
@@ -178,7 +187,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         flexDirection: 'row',
         borderRadius: 10,
-        marginRight: 10,
         marginBottom: 10,
         padding: 15,
     },
@@ -198,4 +206,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: 5
     }
-})
+});
+
+export default ComponentHome;

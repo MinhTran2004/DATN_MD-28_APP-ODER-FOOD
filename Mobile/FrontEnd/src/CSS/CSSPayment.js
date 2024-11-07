@@ -7,14 +7,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#e4e4e4',
         marginVertical: 15,
     },
-
-    // header
     container_header: {
         width: '100%',
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: 'white',
-        padding: 10
+        padding: 10,
+        elevation: 3,
     },
     text_title: {
         fontSize: 25,
@@ -22,14 +21,13 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginLeft: 5,
     },
-
-    // address
     container_address: {
         backgroundColor: 'white',
         borderRadius: 20,
         marginHorizontal: 10,
         marginTop: 10,
-        padding: 15
+        padding: 15,
+        elevation: 3,
     },
     title_address: {
         fontWeight: 'bold',
@@ -49,34 +47,29 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 18,
     },
-
-    // list_product
     container_list_product: {
         marginHorizontal: 10,
         marginVertical: 15,
         padding: 10,
         backgroundColor: 'white',
         borderRadius: 20,
+        elevation: 3,
     },
-
-    // method payment 
     container_method_payment: {
         backgroundColor: 'white',
         padding: 20,
         marginHorizontal: 10,
-        borderRadius: 20
+        borderRadius: 20,
+        elevation: 3,
     },
-
-    // detail payment
     container_detail_payment: {
         backgroundColor: 'white',
         marginHorizontal: 10,
         marginVertical: 15,
         padding: 15,
         borderRadius: 20,
+        elevation: 3,
     },
-
-    // button payment
     buton_payment: {
         backgroundColor: '#1bac4b',
         padding: 10,
@@ -84,12 +77,13 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         borderRadius: 50,
         alignItems: 'center',
+        elevation: 3,
     },
     text_payment: {
         fontWeight: 'bold',
         color: 'white',
         fontSize: 18
-    }
-})
+    },
+});
 
 export default styles;

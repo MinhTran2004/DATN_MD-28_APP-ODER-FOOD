@@ -11,9 +11,9 @@ export default class Component_Payment {
                 <View style={{ width: '77%', marginLeft: 10, justifyContent: 'space-between' }}>
                     <View style={{ width: '80%' }}>
                         <Text style={styles.name_product_vertical}>Vegetarian Noodles</Text>
-                        <Text>Hambuger</Text>
+                        <Text style={styles.description_product}>Hambuger</Text>
                     </View>
-                    <View style={{ width: '100%', flexDirection: 'row', justifyContent: "space-between", alignItems: 'center' }}>
+                    <View style={styles.container_price_quantity}>
                         <Text style={styles.price_product_vertical}>$23.000</Text>
                         <Text style={styles.quantity_product}>x6</Text>
                     </View>
@@ -26,32 +26,28 @@ export default class Component_Payment {
         return (
             <View style={styles.container_method_payment}>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Fontisto name={icon} style={{ fontSize: 23, color: '#1bac4b' }} />
-                    <Text style={{ marginLeft: 10, fontSize: 15 }}>{name}</Text>
+                    <Fontisto name={icon} style={styles.icon} />
+                    <Text style={styles.method_name}>{name}</Text>
                 </View>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ marginLeft: 10, fontSize: 15 }}>{text}</Text>
-                    <AntDesign name="right" style={{ fontSize: 22, color: '#1bac4b' }} />
+                    <Text style={styles.method_text}>{text}</Text>
+                    <AntDesign name="right" style={styles.arrow_icon} />
                 </View>
             </View>
         )
     }
 
-    static DetailsPayment = ({text, price}:any) => {
+    static DetailsPayment = ({ text, price }: any) => {
         return (
             <View style={styles.container_detail_payment}>
                 <Text style={styles.text_detail}>{text}</Text>
                 <Text style={styles.price_detail}>${price}</Text>
-           
             </View>
         )
     }
-
 }
 
-
 const styles = StyleSheet.create({
-    // CartVertical
     container_product_vertical: {
         width: '100%',
         backgroundColor: 'white',
@@ -60,6 +56,15 @@ const styles = StyleSheet.create({
         borderTopWidth: 1,
         borderColor: '#e4e4e4',
         padding: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 2.62,
+        elevation: 4,
+        marginBottom: 10,
     },
     image_product_vertical: {
         width: '23%',
@@ -71,40 +76,61 @@ const styles = StyleSheet.create({
         fontSize: 17,
         color: 'black'
     },
+    description_product: {
+        fontSize: 14,
+        color: '#7d7d7d'
+    },
     price_product_vertical: {
-        width: 150,
         fontSize: 18,
         color: '#42bb6a',
         fontWeight: 'bold',
-        marginTop: 5
     },
     quantity_product: {
         fontSize: 20,
-        marginRight: 30,
         color: '#42bb6a',
     },
-
-    // method payment
+    container_price_quantity: {
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: "space-between",
+        alignItems: 'center',
+    },
     container_method_payment: {
         width: "100%",
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        paddingVertical: 15,
+        borderBottomWidth: 1,
+        borderBottomColor: '#e4e4e4',
     },
-
-    //detail payment
+    icon: {
+        fontSize: 23,
+        color: '#1bac4b',
+    },
+    method_name: {
+        marginLeft: 10,
+        fontSize: 15,
+    },
+    method_text: {
+        marginLeft: 10,
+        fontSize: 15,
+    },
+    arrow_icon: {
+        fontSize: 22,
+        color: '#1bac4b',
+    },
     container_detail_payment: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 5
+        marginBottom: 5,
     },
     text_detail: {
         fontSize: 17,
     },
     price_detail: {
         fontSize: 17,
-        fontWeight: 'bold'
-    }
-
-})
+        fontWeight: 'bold',
+    },
+});
