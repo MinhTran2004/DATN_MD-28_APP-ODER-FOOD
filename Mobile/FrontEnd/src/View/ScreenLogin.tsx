@@ -4,6 +4,7 @@ import styles from "../css/CSSLoginHome.js";
 import ComponentLogin from "../component/Component_Login.tsx";
 import CheckBox from "@react-native-community/checkbox";
 import { ViewModelAccount } from "../viewmodel/VM_Account.ts";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 export default function ScreenLogin({ navigation }: any) {
     const ViewModel = ViewModelAccount(navigation);
@@ -48,7 +49,7 @@ export default function ScreenLogin({ navigation }: any) {
 
             <View style={styles.container_line}>
                 <View style={styles.line} />
-                <Text style={styles.text_line}>hoặc tiếp tục với</Text>
+                <Text style={styles.text_line}>Or</Text>
                 <View style={styles.line} />
             </View>
 
@@ -58,10 +59,10 @@ export default function ScreenLogin({ navigation }: any) {
                 <ComponentLogin.LoginWidthProviders image={require("../Image/github.png")} />
             </View>
 
-            <View style={{ flexDirection: 'row', marginTop: 70 }}>
+            <View style={{ flexDirection: 'row', marginTop: 50 }}>
                 <Text style={{ fontSize: 18 }}>Bạn đã có tài khoản? </Text>
                 <TouchableOpacity onPress={() => { navigation.navigate('Register') }}>
-                    <Text style={{ color: '#2eb55a', fontWeight: '500', fontSize: 18 }}> Đăng ký</Text>
+                    <Text style={{ fontWeight: 'bold', fontSize: 18 }}> Đăng ký</Text>
                 </TouchableOpacity>
             </View>
         </View>

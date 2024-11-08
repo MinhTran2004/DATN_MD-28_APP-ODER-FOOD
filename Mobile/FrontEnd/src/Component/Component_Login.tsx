@@ -39,12 +39,12 @@ const styles = StyleSheet.create({
     // input_component
     container_input: {
         width: '100%',
-        height: 50,
-        backgroundColor: '#e7e7e7',
+        height: 48,
+        backgroundColor: '#F6F4F1',
         flexDirection: 'row',
         alignItems: "center",
-        marginBottom: 10,
-        borderRadius: 10,
+        marginBottom: 11,
+        borderRadius: 15,
     },
     container_input_hover: {
         borderColor: '#1bac4b',
@@ -62,9 +62,10 @@ const styles = StyleSheet.create({
     text_input: {
         width: '100%',
         paddingLeft: 10,
+        color:'A6A1A1'
     },
 
-    // provider_component
+   // provider_component
     container_provider: {
         height: 70,
         width: 90,
@@ -73,7 +74,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#c1c1c1',
         marginRight: 20,
-        borderRadius: 20
+        borderRadius: 10,
+        marginTop:30
     },
     icon_provider: {
         height: 30,

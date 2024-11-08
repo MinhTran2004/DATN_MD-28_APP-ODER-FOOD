@@ -25,26 +25,29 @@ const styles = StyleSheet.create({
     },
     layout_btn_login: {
         width: "100%",
-        backgroundColor: '#1bac4b',
-        borderRadius: 50,
-        marginTop: 15
+        height:52,
+        backgroundColor: '#FE941A',
+        borderRadius: 12,
+        marginTop: 40
     },
     text_btn_login: {
         textAlign: 'center',
         paddingVertical: 10,
         color: 'white',
         fontSize: 18,
-        fontWeight: '500',
+        fontWeight: "light",
     },
     container_line: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginVertical: 50,
+        marginVertical: 20,
+
     },
     line: {
-        width: '100%',
+        width: '40%',
         height: 1,
-        backgroundColor: '#c1c1c1'
+        backgroundColor: '#c1c1c1',
+        
     },
     text_line: {
         fontSize: 19,

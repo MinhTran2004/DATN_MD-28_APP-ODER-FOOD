@@ -31,7 +31,7 @@ export default function ScreenHome({ navigation }: any) {
                 </TouchableOpacity>
 
                 {/* body  */}
-                <ComponentHome.Text_Title text={"Special Offers"} />
+                <ComponentHome.Text_Title text={"Ưu đãi đặc biệt"}  />
                 <Image source={require("../Image/logo_demo.jpg")} style={styles.img_body} />
 
                 <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -47,7 +47,7 @@ export default function ScreenHome({ navigation }: any) {
                     <ComponentHome.SelectCategoryProductVertical navigation={navigation} icon={require("../Image/icon_more.png")} text={"More"} />
                 </View>
 
-                <ComponentHome.Text_Title text={"Discount Guaranteed!"} />
+                <ComponentHome.Text_Title text={"Đồ giảm giá"} />
 
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                     <View style={{ flexDirection: 'row' }}>
@@ -60,9 +60,9 @@ export default function ScreenHome({ navigation }: any) {
                     </View>
                 </ScrollView>
 
-                <ComponentHome.Text_Title text={"Recommended For You"} />
+                <ComponentHome.Text_Title text={"Dành cho bạn"} />
 
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ flexDirection: 'row', marginBottom: 15 }}>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ flexDirection: 'row', marginBottom: 20 }}>
                     <ComponentHome.SelectCategoryProuctHozizontal icon={require("../Image/icon_all.png")} text={"All"} />
                     <ComponentHome.SelectCategoryProuctHozizontal icon={require("../Image/icon_hambuger.png")} text={"Hambuger"} />
                     <ComponentHome.SelectCategoryProuctHozizontal icon={require("../Image/icon_pizza.png")} text={"Pizza"} />

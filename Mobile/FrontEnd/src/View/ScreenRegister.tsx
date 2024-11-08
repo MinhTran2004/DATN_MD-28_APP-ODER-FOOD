@@ -37,7 +37,7 @@ export default function ScreenRegister({ navigation }: any) {
 
             <View style={styles.container_line}>
                 <View style={styles.line} />
-                <Text style={styles.text_line}>hoặc tiếp tục với</Text>
+                <Text style={styles.text_line}>Or</Text>
                 <View style={styles.line} />
             </View>
 
@@ -75,8 +75,9 @@ const styles = StyleSheet.create({
     },
     layout_btn_login: {
         width: "100%",
-        backgroundColor: '#1bac4b',
-        borderRadius: 50,
+        height:52,
+        backgroundColor: '#FE941A',
+        borderRadius: 12,
         marginTop: 15
     },
     text_btn_login: {
@@ -89,10 +90,10 @@ const styles = StyleSheet.create({
     container_line: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginVertical: 50,
+        marginVertical: 20,
     },
     line: {
-        width: '100%',
+        width: '40%',
         height: 1,
         backgroundColor: '#c1c1c1'
     },

@@ -6,7 +6,7 @@ export default class ComponentHome {
         return (
             <View style={styles.container_sreach}>
                 <Image source={require("../Image/search.png")} style={styles.image_search} />
-                <TextInput placeholder="Nhập tên san phẩm cần tìm" value={input} onChangeText={(text) => event(text)} />
+                <TextInput placeholder="Bạn muốn ăn gì?" style={{color:'#A6A1A1'}} value={input} onChangeText={(text) => event(text)} />
             </View>
         )
     }
@@ -15,7 +15,7 @@ export default class ComponentHome {
         return (
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 5 }}>
                 <Text style={styles.text_title}>{text}</Text>
-                <Text style={[styles.text_title, { color: '#37c666' }]}>See All</Text>
+                <Text style={[styles.text_title, { color: '#15FF00' }]}>Xem tất cả</Text>
             </View>
         )
     }
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     container_sreach: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#ebebeb',
+        backgroundColor: '#F6F4F1',
         borderRadius: 10,
         marginTop: 15,
         paddingHorizontal: 10
@@ -102,12 +102,13 @@ const styles = StyleSheet.create({
     image_search: {
         width: 25,
         height: 25,
+        marginRight:10
     },
 
     // Text_Title
     text_title: {
         marginVertical: 10,
-        fontSize: 18,
+        fontSize: 15,
         fontWeight: 'bold',
         color: 'black'
     },
@@ -132,8 +133,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         flexDirection: 'row',
         alignItems: 'center',
-        borderWidth: 2,
-        borderColor: '#2fbf5f',
+        borderWidth: 1,
+        borderColor: '#15FF00',
         borderRadius: 20,
         marginRight: 5,
         paddingVertical: 5,
@@ -162,14 +163,15 @@ const styles = StyleSheet.create({
     },
     name_product_hozizontal: {
         fontWeight: 'bold',
-        fontSize: 17,
-        color: 'black'
+        fontSize: 15,
+        color: 'black',
+        marginTop:6
     },
     price_product_hozizontal: {
-        fontSize: 18,
-        color: '#42bb6a',
+        fontSize: 14,
+        color: '#15FF00',
         fontWeight: 'bold',
-        marginTop: 5
+        marginTop: 7
     },
 
     // ProductVertical
@@ -183,8 +185,8 @@ const styles = StyleSheet.create({
         padding: 15,
     },
     image_product_vertical: {
-        width: 90,
-        height: 90,
+        width: 100,
+        height: 91,
         borderRadius: 10
     },
     name_product_vertical: {
@@ -193,9 +195,9 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     price_product_vertical: {
-        fontSize: 18,
-        color: '#42bb6a',
+        fontSize: 15,
+        color: '#15FF00',
         fontWeight: 'bold',
-        marginTop: 5
+        marginTop: 2
     }
 })

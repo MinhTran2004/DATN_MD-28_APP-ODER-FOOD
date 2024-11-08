@@ -1,4 +1,4 @@
-import { Image, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, TouchableOpacity, View } from "react-native";
 import Feather from "react-native-vector-icons/Feather"
 import styles from "../css/CSSInforProduct";
 import { Text } from "react-native-paper";
@@ -18,8 +18,17 @@ export default function ScreenInforProduct({navigation}:any) {
                 <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between' }}>
                     <View>
                         <Text style={styles.name_product}>Mixed Salad BonBum</Text>
-                        <Text style={styles.price_product}>$ 23.000.000</Text>
+                        <View style = {styles.container_start}>
+                        <Image source={require('../Image/icons_star.png')} style={styles.star_icon}/>
+                        <Image source={require('../Image/icons_star.png')} style={styles.star_icon}/>
+                        <Image source={require('../Image/icons_star.png')} style={styles.star_icon}/>
+                        <Image source={require('../Image/icons_star.png')} style={styles.star_icon}/>
+                        </View>
+                       
+                        <Text style={styles.price_product}>$ 23.000.000</Text>          
                     </View>
+                    
+                    
                     <TouchableOpacity onPress={() => setFavourite(!favourite)}>
                         {favourite ?
                             (<Image source={require('../Image/icon_showFavourite.png')} style={{ width: 25, height: 25 }} />)
@@ -28,10 +37,29 @@ export default function ScreenInforProduct({navigation}:any) {
                         }
                     </TouchableOpacity>
                 </View>
-                <Text style={styles.des_product}>Giới thiệu sản phẩm</Text>
-                <Text style={{ fontSize: 17 }}>Pizza là một món ăn truyền thống nổi tiếng của Ý, thường được làm từ bột mì, nước, muối, và men, rồi được nướng với các loại topping đa dạng như sốt cà chua, phô mai, thịt, rau củ và gia vị. Với hương vị đậm đà và sự kết hợp phong phú</Text>
+                <View style={styles.containerProduct_line}>
+                                 <View style={styles.lineProduct} />
+                                </View>
+                        
+                <Text style={styles.des_product}>Về sản phẩm</Text>
+                <Text style={{ fontSize: 16, color:'#A6A1A1' }}>Pizza là một món ăn truyền thống nổi tiếng của Ý, thường được làm từ bột mì, nước, muối, và men, rồi được nướng với các loại topping đa dạng như sốt cà chua, phô mai, thịt, rau củ và gia vị. Với hương vị đậm đà và sự kết hợp phong phú</Text>
+                <View style={styles.containerProduct_line_2}>
+                                 <View style={styles.lineProduct} />
+                                </View>
+                
+                        <View style = {styles.containercomment}>
+                        <Text style={styles.des_comment}>Bình luận</Text>
+                        <ScrollView>
+                        <View>
+                            <Image source={require('../Image/anh_dai_dien.png')}/>
+                        </View>
+                        </ScrollView>
+                        
+            </View>
 
             </View>
+           
+           
 
             <View style={styles.container_add_product}>
                 <TouchableOpacity style={styles.btn_messenger}>
@@ -41,7 +69,7 @@ export default function ScreenInforProduct({navigation}:any) {
                     <Image source={require("../Image/cart.png")} style={{ width: 35, height: 35 }} />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btn_sell}>
-                    <Text style={{ fontSize: 20, color: 'white' }}>Mua ngay</Text>
+                    <Text style={{ fontSize: 18, color: 'white' }}>Mua ngay</Text>
                 </TouchableOpacity>
             </View>
         </View>
