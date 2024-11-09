@@ -1,5 +1,5 @@
 import axios from "axios";
-import Model_Account from "../model/Model_Account";
+import Model_Account from "../Model/Model_Account";
 
 class SeviceAccount {
     static url = "http://192.168.0.112:5000/account";

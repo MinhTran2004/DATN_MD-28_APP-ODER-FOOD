@@ -1,4 +1,4 @@
-import { Account } from "../../model/Model_Account"
+import { Account } from "../../Model/Model_Account"
 
 const initialState = {
     data: [''],

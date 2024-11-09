@@ -3,7 +3,7 @@ import { Image, Text, TouchableOpacity, View, Alert } from "react-native";
 import styles from "../css/CSSLoginHome.js";
 import ComponentLogin from "../component/Component_Login.tsx";
 import CheckBox from "@react-native-community/checkbox";
-import { ViewModelAccount } from "../viewmodel/VM_Account.ts";
+import { ViewModelAccount } from "../ViewModel/VM_Account.ts";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
 export default function ScreenLogin({ navigation }: any) {

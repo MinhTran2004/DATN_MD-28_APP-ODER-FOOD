@@ -27,6 +27,7 @@ import ScreenSearch from "./src/view/ScreenSearch";
 import ScreenInForOder from "./src/view/ScreenInForOder";
 import { Provider } from "react-redux";
 import store from "./src/redux/store";
+import SplashScreen from "./src/view/SplashScren";
 
 LogBox.ignoreLogs(['Warning: A props object containing a "key" prop is being spread into JSX']);
 
@@ -37,7 +38,8 @@ export default function App() {
     <Provider store={store}>
       <GestureHandlerRootView>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
+          <Stack.Navigator initialRouteName="Splash" screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Splash" component={SplashScreen} />
             <Stack.Screen name="Main" component={BottomTabs} />
             <Stack.Screen name="Login" component={ScreenLogin} />
             <Stack.Screen name="Register" component={ScreenRegister} />
