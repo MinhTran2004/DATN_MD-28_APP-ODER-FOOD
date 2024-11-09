@@ -1,0 +1,3 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/MinhTran2004/DATN_MD-28_APP-ODER-FOOD
